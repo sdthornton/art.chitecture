@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title art.chitecture
+    link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" rel="stylesheet" /
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application", async: true
+
+  body.site
+    = render partial: 'layouts/header'
+    main.site-content.mt-5
+      = yield
+    = render partial: 'layouts/footer'

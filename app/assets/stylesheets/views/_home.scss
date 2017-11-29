@@ -1,0 +1,55 @@
+// .home-title {
+//   opacity: 0;
+//   transform: translateX(10%);
+//   transition: all 0.2s ease-in-out;
+
+//   .js-site-loaded & {
+//     opacity: 1;
+//     transform: translateX(0%);
+//   }
+// }
+
+.wide-shadow {
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+
+.home-title {
+  margin-left: -25%;
+}
+
+.houzz-link-img {
+  transition: all 0.2s ease-in-out;
+
+  .houzz-link:hover & {
+    transform: translateY(-2px);
+  }
+}
+
+.project-list {
+  color: #212529; // $gray-900
+
+  &:hover {
+    color: #212529;
+    text-decoration: none;
+  }
+}
+
+.project-list__title {
+  background-color: #e9ecef; // $gray-200
+  float: left;
+  margin-left: -1rem;
+  margin-top: -2.5rem;
+  padding: 1rem;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+
+  .project-list:hover & {
+    background-color: #868e96; // $gray-600
+  }
+}
+
+.project-list__text {
+  clear: both;
+  padding-top: 0.5rem;
+}
