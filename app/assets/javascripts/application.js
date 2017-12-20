@@ -14,7 +14,6 @@
 //= require turbolinks
 //= require_tree .
 
-
 (function() {
   var lastScrollY = 0;
   var ticking = false;
