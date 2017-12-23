@@ -72,6 +72,7 @@
 }
 
 .smooth-img-placeholder {
+  background-color: #e9ecef;
   background-size: cover;
   height: 100%;
   position: absolute;
@@ -196,3 +197,74 @@
   transform: translateY(-50%);
 }
 
+.reviews:before {
+  content: "“";
+  font-family: serif;
+  font-size: 6rem;
+  left: 50%;
+  max-width: 100%;
+  opacity: 0.15;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 760px;
+}
+
+.review-text {
+  font-size: 1.375rem;
+  left: 0;
+  margin: 0 auto;
+  max-width: 640px;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  transform: translateY(-50%);
+  transition: $transition-base;
+  top: 50%;
+
+  &.is-active {
+    opacity: 1;
+    transform: translateY(-50%);
+    transition-delay: 0.3s;
+  }
+}
+
+.review-text--large {
+  position: relative;
+
+  .js-height-set & {
+    position: absolute;
+  }
+}
+
+.review-dots {
+  opacity: 0;
+  text-align: center;
+
+  .js-height-set & {
+    bottom: 3rem;
+    left: 50%;
+    opacity: 1;
+    position: absolute;
+    transform: translateX(-50%);
+  }
+}
+
+.dot {
+  background-color: rgba(0,0,0,0.15);
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  height: 0.5rem;
+  margin: 0 0.15rem;
+  transition: $transition-base;
+  width: 0.5rem;
+
+  &:hover {
+    background-color: rgba(0,0,0,0.5);
+  }
+
+  &.is-active {
+    background-color: $primary;
+  }
+}

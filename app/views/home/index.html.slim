@@ -70,40 +70,51 @@ section.py-5.position-relative
         h5.mt-5.readable-line-height In the end, your home, like your family, is like no other.
   .col-4.touch-right-img.home-project--featured
     .touch-right-img__bg.smooth-img-wrap
-      .smooth-img-placeholder data-img-load=("https://st.hzcdn.com/simgs/c161913c02447841_9-8955/rustic-exterior.jpg")
+      .smooth-img-placeholder data-img-load=(asset_path "rustic-exterior.jpg")
       .smooth-img
 
 hr.accent-line.my-5
 
-.section.py-5.mt-5
+section.py-5.mt-5
   .container
     .row.align-bottom
       .col-3.align-self-end
         .smooth-img-wrap style="padding-bottom: 94.7474%;"
-          .smooth-img-placeholder data-img-load=("https://st.hzcdn.com/simgs/5a8117cb081bbbf9_9-7809/modern-dining-room.jpg")
+          .smooth-img-placeholder data-img-load=(asset_path "collage-1.jpg")
           .smooth-img
       .col-6.align-self-end
         .smooth-img-wrap style="padding-bottom: 65.0943%;"
-          .smooth-img-placeholder data-img-load=("https://st.hzcdn.com/simgs/93b14484081bbb98_14-6542/transitional-kitchen.jpg")
+          .smooth-img-placeholder data-img-load=(asset_path "collage-2.jpg")
           .smooth-img
       .col-3.align-self-end
         .smooth-img-wrap style="padding-bottom: 129.3333%;"
-          .smooth-img-placeholder data-img-load=("https://st.hzcdn.com/simgs/95e12f23081bbb94_9-7288/rustic-bedroom.jpg")
+          .smooth-img-placeholder data-img-load=(asset_path "collage-3.jpg")
           .smooth-img
     .row.mt-4
       .col-5
         .smooth-img-wrap style="padding-bottom: 66.6666%;"
-          .smooth-img-placeholder data-img-load=("https://st.hzcdn.com/simgs/11115539081bbba3_14-6260/contemporary-living-room.jpg")
+          .smooth-img-placeholder data-img-load=(asset_path "collage-4.jpg")
           .smooth-img
       .col-3
         .smooth-img-wrap style="padding-bottom: 150%;"
-          .smooth-img-placeholder data-img-load=("https://st.hzcdn.com/simgs/55210b09081bbb91_9-7863/contemporary-bathroom.jpg")
+          .smooth-img-placeholder data-img-load=(asset_path "collage-5.jpg")
           .smooth-img
       .col-4
         .smooth-img-wrap style="padding-bottom: 66.6666%;"
-          .smooth-img-placeholder data-img-load=("https://st.hzcdn.com/simgs/84f1d1a4081bbc0b_9-7658/contemporary-living-room.jpg")
+          .smooth-img-placeholder data-img-load=(asset_path "collage-6.jpg")
           .smooth-img
 
+section.py-5.mt-5.bg-light.reviews.position-relative
+  .container.py-5
+    p.review-text.is-active data-review="1" Jerome has done a stellar job in designing a home that meets our needs. His insight as to design has really been a godsend to us and we are really looking forward to moving forward in building what we consider our dream home.
+    p.review-text.review-text--large data-review="2" We hired Jerome DeMarco to design our new house in North Rim, Bend, Ore. North Rim is known to have the toughest architect committee to get your project approved. Jerome had no trouble with it at all. We literally “zoomed” through all reviews and got approved during every stage of design process without any trouble.
+    p.review-text data-review="3" Jerry was wonderful do work with. He met with us on multiple occasions to understand our needs and expectations. He is patient, communicates and listens well. He is open to feedback, and iterations.
+    p.review-text data-review="4" We hired Jerry to restyle the front and interior of our home. We needed an architect who had a sophisticated eye but a down home personality. Oh my gosh we are so lucky to have found him&hellip; what a class act. He has a great eye, is wonderful to work with, and brings calm to the chaos! Just hire him, he is a pro.
+    .review-dots
+      .dot.is-active data-review-ref="1"
+      .dot data-review-ref="2"
+      .dot data-review-ref="3"
+      .dot data-review-ref="4"
 
 javascript:
   // Home animation
@@ -113,7 +124,7 @@ javascript:
   var homeText = homeTitle.querySelector('.home-home');
   var homes = ["home", "maison", "huis", "haus", "σπίτι", "casa", "家", "repouso", "дом", "hogar", "منزل", "בית", "koti", "hem", "baile", "집", "dom", "thuis", "घर", "acasă"];
   var lastUpdate = 0;
-  var homeOpts, getWordRaf;
+  var homeOpts;
 
   function getHomeWord(stamp) {
     homeOpts = homes.filter(function (home) { return home != homeText.innerText });
@@ -129,10 +140,11 @@ javascript:
         getHomeWord();
       }
     }
-    getWordRaf = requestAnimationFrame(loopGetHomeWord);
+    requestAnimationFrame(loopGetHomeWord);
   }
 
-  loopGetHomeWord();
+  requestAnimationFrame(loopGetHomeWord);
+
 
   // Lazy load image
   var imgPlaceholders = document.querySelectorAll('[data-img-load]');
@@ -218,3 +230,43 @@ javascript:
 
   document.querySelector('.home-project-next').addEventListener('click', nextProject, false);
   document.querySelector('.home-project-prev').addEventListener('click', prevProject, false);
+
+
+  // Reviews
+  var reviewsSection = document.querySelector('.reviews');
+  var reviewDots = reviewsSection.querySelector('.review-dots');
+  var lastReviewUpdate = 0;
+  var activeDot, activeReview, reviewRef, nextReview;
+  reviewsSection.style.height = reviewsSection.offsetHeight + 'px';
+  reviewsSection.classList.add('js-height-set');
+
+  function chooseReview(selectedDot) {
+    activeDot = reviewDots.querySelector('.dot.is-active');
+    activeReview = reviewsSection.querySelector('.review-text.is-active');
+    reviewRef = selectedDot.dataset.reviewRef;
+    nextReview = reviewsSection.querySelector('[data-review="' + reviewRef + '"]');
+    activeDot.classList.remove('is-active');
+    selectedDot.classList.add('is-active');
+    activeReview.classList.remove('is-active');
+    nextReview.classList.add('is-active');
+  }
+
+  function chooseReviewLoop(stamp) {
+    if (stamp >= (6000 + lastReviewUpdate)) {
+      nextDot = reviewDots.querySelector('.dot.is-active').nextElementSibling;
+      if (!nextDot) {
+        nextDot = reviewDots.children[0];
+      }
+      chooseReview(nextDot);
+      lastReviewUpdate = stamp;
+    }
+    requestAnimationFrame(chooseReviewLoop);
+  }
+
+  requestAnimationFrame(chooseReviewLoop);
+
+  reviewDots.querySelectorAll('.dot').forEach(function (dot) {
+    dot.addEventListener('click', function (e) {
+      requestAnimationFrame(function () { chooseReview(e.target); })
+    }, false);
+  });
