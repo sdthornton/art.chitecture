@@ -89,9 +89,10 @@
   transition: $transition-base;
   width: 100%;
 
-  .js-visible & {
+  .js-site-loaded .js-visible & {
     opacity: 1;
   }
+
 }
 
 .project-info {
@@ -104,14 +105,17 @@
   transition: $transition-base;
   width: 100%;
 
-  .js-visible & {
+  .js-site-loaded .js-visible & {
     opacity: 1;
   }
 }
 
+.home-project--featured .project-info__title {
+  font-size: 2rem;
+}
+
 .project-info__text {
   display: none;
-  opacity: 0.75;
 
   .home-project--featured & {
     display: block;
@@ -125,7 +129,7 @@
   top: 1rem;
   transition: $transition-base;
 
-  .js-visible & {
+  .js-site-loaded .js-visible & {
     opacity: 1;
   }
 }

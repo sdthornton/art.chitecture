@@ -3,4 +3,8 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
+  resources :services, only: :index
+  get '/process' => 'process#index', as: 'process'
+  get '/contact' => 'contact#index', as: 'contact'
+
 end

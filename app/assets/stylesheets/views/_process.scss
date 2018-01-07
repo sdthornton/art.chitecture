@@ -1,0 +1,36 @@
+.process-item {
+  font-size: 1.25rem;
+  padding: 2rem 0 2rem 4rem;
+  position: relative;
+
+  &:before {
+    background-color: $primary;
+    border-radius: 50%;
+    color: white;
+    content: attr(data-process-item);
+    display: block;
+    font-size: 0.85rem;
+    height: 2rem;
+    left: 0;
+    line-height: 2rem;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2rem;
+  }
+
+  &:after {
+    border-left: 2px dashed $gray-300;
+    content: "";
+    height: 100%;
+    left: 1rem;
+    position: absolute;
+    top: 50%;
+    z-index: -1;
+  }
+
+  &:last-child:after {
+    content: none;
+  }
+}

@@ -5,24 +5,13 @@ html
     meta http-equiv="x-ua-compatible" content="ie=edge"
     meta content="width=device-width, initial-scale=1.0" name="viewport"
     title art.chitecture
-    / link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet"
-    link href="/ionicons.css" rel="stylesheet"
+    link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet"
     = stylesheet_link_tag "application"
-    javascript:
-      function addSiteLoadedClass() {
-        if (!document.body.classList.contains('js-site-loaded')) {
-          setTimeout(function () {
-            requestAnimationFrame(function () {
-              document.body.classList.add('js-site-loaded')
-            })
-          }, 250);
-        }
-      }
-      document.addEventListener("DOMContentLoaded", addSiteLoadedClass, false);
-      document.addEventListener('turbolinks:load', addSiteLoadedClass, false);
-    = javascript_include_tag "application", async: true
+    = javascript_include_tag "application"
   body.site
     = render partial: 'layouts/header'
     main.site-content
       = yield
     = render partial: 'layouts/footer'
+    script
+      = yield :javascript

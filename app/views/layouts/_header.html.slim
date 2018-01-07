@@ -1,21 +1,21 @@
 header.site-header.py-4.container-fluid
   = link_to root_path, class: "text-dark" do
     h1.float-left.site-logo.mb-0
+      span.h5.d-block.mb-0 Jerome DeMarco
       span.text-primary art.
       span chitecture
   nav.site-nav.float-right
     a.site-nav__item href="#" Projects
-    a.site-nav__item href="#" Process
-    a.site-nav__item href="#" Mission
-    a.site-nav__item href="#" Services
-    a.site-nav__item href="#" Contact
+    = link_to "Process", process_path, class: "site-nav__item"
+    = link_to "Services", services_path, class: "site-nav__item"
+    = link_to "Contact", contact_path, class: "site-nav__item"
 header.site-header.site-header--fixed.py-3.container-fluid
-  h3.float-left.site-logo.mb-0
-    span.text-primary art.
-    span chitecture
+  = link_to root_path, class: "text-dark" do
+    h3.float-left.site-logo.mb-0
+      span.text-primary art.
+      span chitecture
   nav.site-nav.site-nav--fixed.float-right
     a.site-nav__item href="#" Projects
-    a.site-nav__item href="#" Process
-    a.site-nav__item href="#" Mission
-    a.site-nav__item href="#" Services
-    a.site-nav__item href="#" Contact
+    = link_to "Process", process_path, class: "site-nav__item"
+    = link_to "Services", services_path, class: "site-nav__item"
+    = link_to "Contact", contact_path, class: "site-nav__item"

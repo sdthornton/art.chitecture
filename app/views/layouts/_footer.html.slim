@@ -1,23 +1,25 @@
-footer.site-footer.py-5.bg-secondary
+footer.site-footer.py-5.bg-dark
   .container.py-5
     .row
-      .col-2.text-white
-        a href="https://www.houzz.com/pro/jdemarcodesigns/jerome-demarco-artchitecture" target="_blank"
-          img src="http://www.highmark-builders.com/media/k2/items/cache/deb9f9efc56ef2a940bdf0d58ccaad5c_S.jpg" width="64"
+      .col-3.text-white
+        a.d-block href="https://www.houzz.com/pro/jdemarcodesigns/jerome-demarco-artchitecture" target="_blank"
+          = image_tag "houzz-recommended.jpg", width: "96", class: "basic-shadow"
+        a.d-block href="https://www.houzz.com/pro/jdemarcodesigns/jerome-demarco-artchitecture" target="_blank"
+          = image_tag "houzz-influencer.jpg", width: "96", class: "basic-shadow mt-3"
       .col-2
         a.text-white.d-block href="#" Home
         a.text-white.mt-2.d-block href="#" Projects
-        a.text-white.mt-2.d-block href="#" Process
+        = link_to "Process", process_path, class: "text-white mt-2 d-block"
       .col-2
-        a.text-white.d-block href="#" Mission
-        a.text-white.mt-2.d-block href="#" Services
-        a.text-white.mt-2.d-block href="#" Contact
-      .col-6.text-right
-        = link_to root_path, class: "text-white d-block mb-4"
-          h3
-            span.text-dark art.
+        = link_to "Services", services_path, class: "text-white mt-2 d-block"
+        = link_to "Contact", contact_path, class: "text-white mt-2 d-block"
+      .col-5.text-right
+        = link_to root_path, class: "text-white d-block mb-5"
+          h2
+            span.text-primary art.
             span chitecture
+          h5 Jerome DeMarco
         .text-white
-          | Bend | Eugene | Portland
           a.text-white.d-block.my-1 href="mailto:jerome@jdemarcodesigns.com" jerome@jdemarcodesigns.com
-          | 541-221-5802
+          span.d-block Portland, Oregon
+          span.d-block 541-221-5802

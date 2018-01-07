@@ -9,3 +9,15 @@
 .basic-shadow {
   box-shadow: $base-shadow;
 }
+
+.wide-shadow {
+  box-shadow: $wide-shadow;
+}
+
+.text-muted {
+  color: $gray-700 !important;
+}
+
+.btn-spacer {
+  letter-spacing: 0.5px;
+}
