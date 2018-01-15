@@ -1,0 +1,45 @@
+section
+  .container.my-5.pb-5
+    .row
+      .col-lg-6.offset-1
+        h1.font-weight-bold.display-3 Dream homes come true.
+    .row
+      .col-lg-6.mx-auto
+        .clearfix.pb-4
+          h2.form-heading.h3.mt-4.text-center Selected projects
+          hr.accent-line.my-4
+    .row.mt-5.mb-5.pb-5
+      .col-7.mx-auto
+        = link_to contemporary_project_path do
+          .smooth-img-wrap style="padding-bottom: 66.6666%;"
+            .smooth-img-placeholder data-img-load=(asset_path('contemporary-space.jpg'))
+            img.smooth-img width="100%"
+            .project-info
+              h3 Contemporary Panoramic
+    .row.mb-5.pb-5
+      .col-7.ml-auto
+        = link_to french_country_project_path do
+          .smooth-img-wrap style="padding-bottom: 66.6666%;"
+            .smooth-img-placeholder data-img-load=(asset_path('mediterranean-exterior.jpg'))
+            img.smooth-img width="100%"
+            .project-info
+              h3 French Country
+    .row.mb-5.pb-5
+      .col-7
+        = link_to modern_mediterranean_project_path do
+          .smooth-img-wrap style="padding-bottom: 66.6666%;"
+            .smooth-img-placeholder data-img-load=(asset_path('sprawling.jpg'))
+            img.smooth-img width="100%"
+            .project-info
+              h3 Modern Mediterranean
+    .row.mb-5
+      .col-7.ml-auto
+        = link_to nw_traditional_project_path do
+          .smooth-img-wrap style="padding-bottom: 66.6666%;"
+            .smooth-img-placeholder data-img-load=(asset_path('transitional-spaces.jpg'))
+            img.smooth-img width="100%"
+            .project-info
+              h3 Northwest Traditional
+
+- content_for :javascript do
+  | lazyLoadImages();

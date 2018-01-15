@@ -1,13 +1,15 @@
 header.site-header.py-4.container-fluid
   = link_to root_path, class: "text-dark" do
-    h1.float-left.site-logo.mb-0
-      span.h5.d-block.mb-0 Jerome DeMarco
+    h3.float-left.site-logo
+      span.d-block.mb-0 Jerome DeMarco
       span.text-primary art.
       span chitecture
   nav.site-nav.float-right
-    a.site-nav__item href="#" Projects
+    = link_to "Home", root_path, class: "site-nav__item"
+    = link_to "Projects", projects_path, class: "site-nav__item"
     = link_to "Process", process_path, class: "site-nav__item"
     = link_to "Services", services_path, class: "site-nav__item"
+    = link_to "About", about_path, class: "site-nav__item"
     = link_to "Contact", contact_path, class: "site-nav__item"
 header.site-header.site-header--fixed.py-3.container-fluid
   = link_to root_path, class: "text-dark" do
@@ -15,7 +17,9 @@ header.site-header.site-header--fixed.py-3.container-fluid
       span.text-primary art.
       span chitecture
   nav.site-nav.site-nav--fixed.float-right
-    a.site-nav__item href="#" Projects
+    = link_to "Home", root_path, class: "site-nav__item"
+    = link_to "Projects", projects_path, class: "site-nav__item"
     = link_to "Process", process_path, class: "site-nav__item"
     = link_to "Services", services_path, class: "site-nav__item"
+    = link_to "About", about_path, class: "site-nav__item"
     = link_to "Contact", contact_path, class: "site-nav__item"

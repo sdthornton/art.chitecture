@@ -1,16 +1,4 @@
-section.py-5.position-relative
-  .col-7.touch-left-img.home-project--featured
-    .touch-left-img__bg.smooth-img-wrap
-      .smooth-img-placeholder.bg-contemporary data-img-load=(asset_path('contemporary-space.jpg'))
-      .smooth-img
-      .project-info
-        h4.project-info__title Contemporary
-        p.project-info__text Surrounded by stunning views, a mid-century vibe produced this timeless design.
-      .home-project-buttons
-        a.home-project-button.home-project-prev href="#"
-          i.ion-arrow-left-c
-        a.home-project-button.home-project-next href="#"
-          i.ion-arrow-right-c
+section.py-5.mt-4.position-relative
   .container
     .row
       .col-5.ml-auto
@@ -18,41 +6,60 @@ section.py-5.position-relative
           | We design spaces you call <span class="home-home">home</span>.
         p.mb-0.home-prop.text-right.w-75.ml-auto.font-weight-semibold We have one simple goal, to give you a home where family and friends gather, connect, and enjoy one-another.
         .clearfix.mt-4
-          = link_to contact_path, class: 'btn btn-primary btn-lg basic-shadow float-left font-weight-bold btn-spacer' do
+          = link_to contact_path, class: 'btn btn-primary btn-lg basic-shadow float-left font-weight-semibold btn-spacer' do
             | Work with us
             i.ion-ios-home.ml-2
           a.houzz-link.float-right.mt-2 href="https://www.houzz.com/pro/jdemarcodesigns/jerome-demarco-artchitecture" target="_blank"
             = image_tag "featured-on-houzz.jpg", class: "houzz-link-img", height: 33, width: 224, alt: "Featured on Houzz logo", title: "Featured on Houzz"
+  .col-7.touch-left-img.home-project--featured
+    .touch-left-img__bg.smooth-img-wrap
+      .smooth-img-placeholder.bg-contemporary data-img-load=(asset_path('contemporary-space.jpg'))
+      .smooth-img
+        = link_to contemporary_project_path, class: "project-info" do
+          .row
+            .col-lg-8.project-info__content
+              h4.project-info__title Contemporary Panoramic
+              p.project-info__text A mid-century design and clean landscaping works to accent stunning views in this timeless home.
+            .col-lg-4.text-right
+              i.ion-forward.mr-3.h2.mt-5.d-block
+      .home-project-buttons
+        a.home-project-button.home-project-next href="#"
+          i.ion-arrow-right-c
+        a.home-project-button.home-project-prev href="#"
+          i.ion-arrow-left-c
 
 section.pt-5
   .container.my-5
     .bg-grid
       .row
-        a.home-project.col-4 href="#"
+        = link_to french_country_project_path, class: "home-project col-4" do
           .smooth-img-wrap style="padding-bottom: 66.6666%;"
             .smooth-img-placeholder.bg-mediterranean data-img-load=(asset_path('mediterranean-exterior.jpg'))
-            = image_tag "", class: "smooth-img", width: "100%"
+            img.smooth-img width="100%"
             .project-info
-              h4.project-info__title French Country
-              p.project-info__text Lorem ipsum ifso facto, this is a generic description.
-        a.home-project.col-4 href="#"
+              .project-info__content
+                h4.project-info__title French Country
+                p.project-info__text An open and collaborative design process helped produce this classic home in Northern California.
+        = link_to modern_mediterranean_project_path, class: "home-project col-4" do
           .smooth-img-wrap style="padding-bottom: 66.6666%;"
             .smooth-img-placeholder.bg-sprawling data-img-load=(asset_path('sprawling.jpg'))
-            = image_tag "", class: "smooth-img", width: "100%"
+            img.smooth-img width="100%"
             .project-info
-              h4.project-info__title Modern Mediterranean
-              p.project-info__text Lorem ipsum ifso facto, this is a generic description.
-        a.home-project.col-4 href="#"
+              .project-info__content
+                h4.project-info__title Modern Mediterranean
+                p.project-info__text Northwest views meet mediterranean inspiration to create this beautiful and peaceful estate.
+        = link_to nw_traditional_project_path, class: "home-project col-4" do
           .smooth-img-wrap style="padding-bottom: 66.6666%;"
             .smooth-img-placeholder.bg-traditional data-img-load=(asset_path('transitional-spaces.jpg'))
-            = image_tag "", class: "smooth-img", width: "100%"
+            img.smooth-img width="100%"
             .project-info
-              h4.project-info__title NW Traditional
-              p.project-info__text Lorem ipsum ifso facto, this is a generic description.
+              .project-info__content
+                h4.project-info__title NW Traditional
+                p.project-info__text Local materials&mdash;from oversized timbers to natural mossy stone&mdash;helped craft this fabulous transitional home.
       .row.mt-5.py-5.text-center
         .col-8.mx-auto
           .grid-box
-            h4.readable-line-height We've served the Northwest with over 20 years of award winning custom-designed homes. Our interior and exterior designed homes engender harmony and ambient living spaces are uniquely crafted for your family. Afterall, it's your home.
+            h4.readable-line-height We've served the Northwest with over 20 years of award winning custom-designed homes. Our interior and exterior designed homes engender harmony, and ambient living spaces are uniquely crafted for your family. After all, it's your home.
             hr.accent-line.mt-5
 
 section.py-5.position-relative
@@ -79,30 +86,30 @@ section.py-5.mt-5
   .container
     .row.align-bottom
       .col-3.align-self-end
-        .smooth-img-wrap style="padding-bottom: 94.7474%;"
+        .smooth-img-wrap style="padding-bottom: 84.6774%;"
           .smooth-img-placeholder data-img-load=(asset_path "collage-1.jpg")
-          .smooth-img
+          .smooth-img width="100%"
       .col-6.align-self-end
-        .smooth-img-wrap style="padding-bottom: 65.0943%;"
+        .smooth-img-wrap style="padding-bottom: 66.6666%;"
           .smooth-img-placeholder data-img-load=(asset_path "collage-2.jpg")
-          .smooth-img
+          .smooth-img width="100%"
       .col-3.align-self-end
-        .smooth-img-wrap style="padding-bottom: 129.3333%;"
+        .smooth-img-wrap style="padding-bottom: 109.5679%;"
           .smooth-img-placeholder data-img-load=(asset_path "collage-3.jpg")
-          .smooth-img
+          .smooth-img width="100%"
     .row.mt-4
       .col-5
-        .smooth-img-wrap style="padding-bottom: 66.6666%;"
+        .smooth-img-wrap style="padding-bottom: 61.7954%;"
           .smooth-img-placeholder data-img-load=(asset_path "collage-4.jpg")
-          .smooth-img
+          .smooth-img width="100%"
       .col-3
-        .smooth-img-wrap style="padding-bottom: 150%;"
+        .smooth-img-wrap style="padding-bottom: 133.5626%;"
           .smooth-img-placeholder data-img-load=(asset_path "collage-5.jpg")
-          .smooth-img
+          .smooth-img width="100%"
       .col-4
-        .smooth-img-wrap style="padding-bottom: 66.6666%;"
+        .smooth-img-wrap style="padding-bottom: 55.0588%;"
           .smooth-img-placeholder data-img-load=(asset_path "collage-6.jpg")
-          .smooth-img
+          .smooth-img width="100%"
 
 section.py-5.mt-5.bg-light.reviews.position-relative
   .container.py-5
@@ -123,9 +130,8 @@ javascript:
   // Home animation
   var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
   var cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnimationFrame;
-  var homeTitle = document.querySelector('.home-title');
-  var homeText = homeTitle.querySelector('.home-home');
-  var homes = ["home", "maison", "huis", "haus", "σπίτι", "casa", "家", "repouso", "дом", "hogar", "منزل", "בית", "koti", "hem", "baile", "집", "dom", "thuis", "घर", "acasă"];
+  var homeText = document.querySelector('.home-home');
+  var homes = ["home", "maison", "huis", "haus", "σπίτι", "casa", "repouso", "hogar", "منزل", "בית", "koti", "hem", "baile", "dom", "thuis", "acasă"];
   var lastUpdate = 0;
   var homeOpts, homeWordRaf;
 
@@ -146,51 +152,65 @@ javascript:
     homeWordRaf = requestAnimationFrame(loopGetHomeWord);
   }
 
-  homeTitle.addEventListener('mouseover', loopGetHomeWord, false);
-  homeTitle.addEventListener('mouseout', function () {
+  homeText.addEventListener('mouseover', loopGetHomeWord, false);
+  homeText.addEventListener('mouseout', function () {
     homeText.innerText = "home";
     cancelAnimationFrame(homeWordRaf);
   }, false);
 
 
-  // Slideshow
+  // Project Slideshow
   var featuredProject = document.querySelector('.home-project--featured');
   var featuredImage = featuredProject.querySelector('.smooth-img');
-  var featuredInfo = featuredProject.querySelector('.project-info');
+  var featuredContent = featuredProject.querySelector('.project-info__content');
+  var featuredLink = featuredProject.querySelector('.project-info');
   var projects = document.querySelectorAll('.home-project');
 
   function changeProject(direction) {
     var projectImages = [];
-    var projectInfos = [];
-    var infoTexts = [featuredInfo.innerHTML];
-    var allSrcs = [featuredImage.style.backgroundImage.replace(/url\(.(.*).\)/gi, "$1")];
+    var projectContents = [];
+    var infoTexts = [featuredContent.innerHTML];
+    var hrefs = [featuredProject.querySelector('.project-info').href];
+    var imageSrcs = [featuredImage.style.backgroundImage.replace(/url\(.(.*).\)/gi, "$1")];
     for (var i = 0, len = 3; i < len; i++) {
       projectImages.push(projects[i].querySelector('.smooth-img'));
-      allSrcs.push(projectImages[i].src);
-      projectInfos.push(projects[i].querySelector('.project-info'));
-      infoTexts.push(projectInfos[i].innerHTML);
+      imageSrcs.push(projectImages[i].src);
+      projectContents.push(projects[i].querySelector('.project-info__content'));
+      infoTexts.push(projectContents[i].innerHTML);
+      hrefs.push(projects[i].href);
     }
 
     if (direction === 'prev') {
-      featuredImage.style.backgroundImage = 'url("' + allSrcs[3] + '")';
-      projectImages[0].src = allSrcs[0];
-      projectImages[1].src = allSrcs[1];
-      projectImages[2].src = allSrcs[2];
+      featuredImage.style.backgroundImage = 'url("' + imageSrcs[3] + '")';
+      projectImages[0].src = imageSrcs[0];
+      projectImages[1].src = imageSrcs[1];
+      projectImages[2].src = imageSrcs[2];
 
-      featuredInfo.innerHTML = infoTexts[3];
-      projectInfos[0].innerHTML = infoTexts[0];
-      projectInfos[1].innerHTML = infoTexts[1];
-      projectInfos[2].innerHTML = infoTexts[2];
+      featuredContent.innerHTML = infoTexts[3];
+      projectContents[0].innerHTML = infoTexts[0];
+      projectContents[1].innerHTML = infoTexts[1];
+      projectContents[2].innerHTML = infoTexts[2];
+
+      featuredLink.href = hrefs[3];
+      projects[0].href = hrefs[0];
+      projects[1].href = hrefs[1];
+      projects[2].href = hrefs[2];
+
     } else {
-      featuredImage.style.backgroundImage = 'url("' + allSrcs[1] + '")';
-      projectImages[0].src = allSrcs[2];
-      projectImages[1].src = allSrcs[3];
-      projectImages[2].src = allSrcs[0];
+      featuredImage.style.backgroundImage = 'url("' + imageSrcs[1] + '")';
+      projectImages[0].src = imageSrcs[2];
+      projectImages[1].src = imageSrcs[3];
+      projectImages[2].src = imageSrcs[0];
 
-      featuredInfo.innerHTML = infoTexts[1];
-      projectInfos[0].innerHTML = infoTexts[2];
-      projectInfos[1].innerHTML = infoTexts[3];
-      projectInfos[2].innerHTML = infoTexts[0];
+      featuredContent.innerHTML = infoTexts[1];
+      projectContents[0].innerHTML = infoTexts[2];
+      projectContents[1].innerHTML = infoTexts[3];
+      projectContents[2].innerHTML = infoTexts[0];
+
+      featuredLink.href = hrefs[1];
+      projects[0].href = hrefs[2];
+      projects[1].href = hrefs[3];
+      projects[2].href = hrefs[0];
     }
   }
 
