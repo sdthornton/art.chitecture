@@ -191,6 +191,47 @@
   padding: 1.5rem;
 }
 
+.collage-link {
+  display: block;
+  position: relative;
+
+  &:before {
+    background-color: rgba(0,0,0,0.35);
+    color: white;
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    transition: $transition-base;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &:after {
+    background: $houzz;
+    border-radius: $border-radius;
+    box-shadow: $base-shadow;
+    color: white;
+    content: "View on Houzz";
+    left: 50%;
+    opacity: 0;
+    padding: 0.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    transition: $transition-base;
+    z-index: 1;
+  }
+
+  &:hover:before,
+  &:hover:after {
+    opacity: 1;
+  }
+}
+
 .reviews:before {
   content: "“";
   font-family: serif;

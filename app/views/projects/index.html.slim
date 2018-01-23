@@ -41,5 +41,7 @@ section
             .project-info
               h3 Northwest Traditional
 
-- content_for :javascript do
-  | lazyLoadImages();
+= render partial: "projects-footer"
+
+javascript:
+  lazyLoadImages();
