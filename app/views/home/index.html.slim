@@ -1,52 +1,92 @@
-section.mb-5
+section.py-5.mt-4.position-relative
+  .container
+    .row
+      .col-5.ml-auto
+        h1.display-3.font-weight-bold.mb-5.home-title
+          | We design spaces you call <span class="home-home">home</span>.
+        p.mb-0.home-prop.text-right.w-75.ml-auto.font-weight-semibold We have one simple goal, to give you a home where family and friends gather, connect, and enjoy one-another.
+        .clearfix.mt-4
+          = link_to contact_path, class: 'btn btn-primary btn-lg basic-shadow float-left font-weight-semibold btn-spacer' do
+            | Work with us
+            i.ion-ios-home.ml-2
+          a.houzz-link.float-right.mt-2 href="https://www.houzz.com/pro/jdemarcodesigns/jerome-demarco-artchitecture" target="_blank"
+            = image_tag "featured-on-houzz.jpg", class: "houzz-link-img", height: 33, width: 224, alt: "Featured on Houzz logo", title: "Featured on Houzz"
+  .col-7.touch-left-img.home-project--featured
+    .touch-left-img__bg.smooth-img-wrap
+      .smooth-img-placeholder.bg-contemporary data-img-load=(asset_path('contemporary-space.jpg'))
+      .smooth-img
+        = link_to contemporary_project_path, class: "project-info" do
+          .row
+            .col-lg-8.project-info__content
+              h4.project-info__title Contemporary Panoramic
+              p.project-info__text A mid-century design and clean landscaping works to accent stunning views in this timeless home.
+            .col-lg-4.text-right
+              i.ion-forward.mr-3.h2.mt-5.d-block
+      .home-project-buttons
+        a.home-project-button.home-project-next href="#"
+          i.ion-arrow-right-c
+        a.home-project-button.home-project-prev href="#"
+          i.ion-arrow-left-c
+
+section.pt-5
+  .container.my-5
+    .bg-grid
+      .row
+        = link_to french_country_project_path, class: "home-project col-4" do
+          .smooth-img-wrap style="padding-bottom: 66.6666%;"
+            .smooth-img-placeholder.bg-mediterranean data-img-load=(asset_path('mediterranean-exterior.jpg'))
+            img.smooth-img width="100%"
+            .project-info
+              .project-info__content
+                h4.project-info__title French Country
+                p.project-info__text An open and collaborative design process helped produce this classic home in Northern California.
+        = link_to modern_mediterranean_project_path, class: "home-project col-4" do
+          .smooth-img-wrap style="padding-bottom: 66.6666%;"
+            .smooth-img-placeholder.bg-sprawling data-img-load=(asset_path('sprawling.jpg'))
+            img.smooth-img width="100%"
+            .project-info
+              .project-info__content
+                h4.project-info__title Modern Mediterranean
+                p.project-info__text Northwest views meet mediterranean inspiration to create this beautiful and peaceful estate.
+        = link_to nw_traditional_project_path, class: "home-project col-4" do
+          .smooth-img-wrap style="padding-bottom: 66.6666%;"
+            .smooth-img-placeholder.bg-traditional data-img-load=(asset_path('transitional-spaces.jpg'))
+            img.smooth-img width="100%"
+            .project-info
+              .project-info__content
+                h4.project-info__title NW Traditional
+                p.project-info__text Local materials&mdash;from oversized timbers to natural mossy stone&mdash;helped craft this fabulous transitional home.
+      .row.mt-5.py-5.text-center
+        .col-8.mx-auto
+          .grid-box
+            h4.readable-line-height We've served the Northwest with over 20 years of award winning custom-designed homes. Our interior and exterior designed homes engender harmony, and ambient living spaces are uniquely crafted for your family. After all, it's your home.
+            hr.accent-line.mt-5
+
+section.py-5.position-relative
   .container
     .row
       .col-7
-        = image_tag "contemporary-space.jpg", class: "wide-shadow", width: "100%", alt: "An image of a modern home in the Pacific NW designed by Jerome DeMarco of art.architecture", title: "Contemporary home design in the Pacific NW"
-        h5.project-list__title.position-absolute Contemporary Elevations
-      .col-5
-        h1.display-3.font-weight-bold.mt-2.home-title
-          | We design places you can call home.
-        h2.h4.my-4.home-prop We have one simple goal, to create a place where families gather, enjoy each other, and connect.
-        a.houzz-link href="https://www.houzz.com/pro/jdemarcodesigns/jerome-demarco-artchitecture"
-          = image_tag "featured-on-houzz.jpg", class: "houzz-link-img", height: 25, width: 174, alt: "Featured on Houzz logo", title: "Featured on Houzz"
-section.py-5
-  .container
-    .row.align-items-center
-      .col-3
-        h2.mb-0 Custom Home Design &amp; Home Redesign
-      .col-9
-        p.mb-0 We've served the Northwest with excellence in interior and exterior design for over 25 years. Still, every one of our homes are unique, just like every family is unique. Our homes engender harmony, and our ambient living spaces are uniquely crafted for your family.
-section.py-5
-  .container
-    .row.align-items-center
-      .col-6
-        = image_tag src="https://st.hzcdn.com/simgs/25a16fa902448527_14-0537/rustic-rendering.jpg", class: "float-left wide-shadow", width: "60%"
-        = image_tag src="https://st.hzcdn.com/simgs/5dd1b21e027b0339_9-3470/rustic-rendering.jpg", class: "float-right wide-shadow", width: "60%", style: "margin-top: -5rem;"
-      .col-5.ml-auto.text-right
-        h2 From concept to construction, we're here to turn your dream home into a reality.
-        a.btn.btn-primary.btn-block.mt-5.mb-4 href="" Work with us
-section.py-5
-  .container
-    h2.mb-4 Featured work
+        h1.display-4 Custom Home Design &amp; Home Redesign
     .row
-      a.col-4.project-list href="#"
-        = image_tag "mediterranean-exterior.jpg", class: "wide-shadow", width: "100%"
-        .project-list__body
-          h5.project-list__title French Country
-          p.project-list__text Lorem ipsum dolor amet tilde farm-to-table copper mug, kogi kinfolk gentrify +1 migas gluten-free quinoa pitchfork ethical kombucha.
-          .small.text-uppercase.font-weight-bold September, 2013
-      a.col-4.project-list href="#"
-        = image_tag "contemporary-space.jpg", class: "wide-shadow", width: "100%"
-        .project-list__body
-          h5.project-list__title Contemporary Elevations
-          p.project-list__text Green juice ullamco taxidermy, synth vice succulents deserunt man bun sunt direct trade freegan est.
-          .small.text-uppercase.font-weight-bold August, 2015
-      a.col-4.project-list href="#"
-        = image_tag "transitional-spaces.jpg", class: "wide-shadow", width: "100%"
-        .project-list__body
-          h5.project-list__title Lake Tahoe
-          p.project-list__text Cliche consectetur enamel pin hot chicken. Pitchfork sint wolf, laboris yr prism semiotics flannel activated charcoal kogi irony pinterest cardigan mixtape nulla.
-          .small.text-uppercase.font-weight-bold February, 2012
+      .col-6.offset-2
+        h3.readable-line-height.text-right.mt-5 From concept to construction, we're here to turn your dream home into a reality.
+    .row
+      .col-7.offset-1
+        p.mt-4 We believe that there is no such thing as a typical customer or a typical home. Each client has unique desires and constraints.
+        p.mb-0 Our luxury home designs are innovative. We are driven by inspiration. Artistry and Architecture blend in each home. Details are sublime. Our homes engender harmony, and ambient living spaces are uniquely crafted for your family.
+        h4.mt-5.mb-0.readable-line-height In the end, your home, like your family, is like no other.
+  .col-4.touch-right-img.home-project--featured
+    .touch-right-img__bg.smooth-img-wrap
+      .smooth-img-placeholder data-img-load=(asset_path "rustic-exterior.jpg")
+      .smooth-img
 
+hr.accent-line.my-5
 
+= render partial: "collage"
+= render partial: "reviews"
+
+javascript:
+  lazyLoadImages();
+  homeAnimation();
+  projectSlideshow();
+  reviews();

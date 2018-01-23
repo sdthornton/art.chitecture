@@ -1,8 +1,26 @@
-footer.site-footer.py-4
-  .container
-    = link_to root_path, class: "text-dark"
-      h5.float-right
-        span.d-block.pl-4 Jerome DeMarco
-        span.d-block
-          span style=("color: #fe6402") art.
-          span chitecture
+footer.site-footer.py-5.bg-dark
+  .container.py-5
+    .row
+      .col-md-3.text-white
+        a.d-block href="https://www.houzz.com/pro/jdemarcodesigns/jerome-demarco-artchitecture" target="_blank"
+          = image_tag "houzz-recommended.jpg", width: "96", class: "basic-shadow"
+        a.d-block href="https://www.houzz.com/pro/jdemarcodesigns/jerome-demarco-artchitecture" target="_blank"
+          = image_tag "houzz-influencer.jpg", width: "96", class: "basic-shadow mt-3"
+      .col-md-2
+        = link_to "Home", root_path, class: "text-white d-block"
+        = link_to "Projects", projects_path, class: "text-white mt-2 d-block"
+        = link_to "Process", process_path, class: "text-white mt-2 d-block"
+      .col-md-2
+        = link_to "Services", services_path, class: "text-white mt-2 d-block"
+        = link_to "About", about_path, class: "text-white mt-2 d-block"
+        = link_to "Contact", contact_path, class: "text-white mt-2 d-block"
+      .col-md-5.text-right
+        = link_to root_path, class: "text-white d-block mb-5"
+          h3
+            span.text-primary art.
+            span chitecture
+          h3 Jerome DeMarco
+        .text-white
+          span.d-block.my-1 Serving the western United States from Portland, Oregon.
+          a.text-white.d-block.my-1 href="mailto:jerome@jdemarcodesigns.com" jerome@jdemarcodesigns.com
+          span.d-block.my-1 541-221-5802

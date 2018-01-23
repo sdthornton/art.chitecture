@@ -1,0 +1,23 @@
+.readable-line-height {
+  line-height: $line-height-lg;
+}
+
+.font-weight-semibold {
+  font-weight: 500;
+}
+
+.basic-shadow {
+  box-shadow: $base-shadow;
+}
+
+.wide-shadow {
+  box-shadow: $wide-shadow;
+}
+
+.text-muted {
+  color: $gray-700 !important;
+}
+
+.btn-spacer {
+  letter-spacing: 0.5px;
+}

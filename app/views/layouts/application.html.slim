@@ -5,12 +5,11 @@ html
     meta http-equiv="x-ua-compatible" content="ie=edge"
     meta content="width=device-width, initial-scale=1.0" name="viewport"
     title art.chitecture
-    link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" rel="stylesheet" /
+    link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet"
     = stylesheet_link_tag "application"
-    = javascript_include_tag "application", async: true
-
+    = javascript_include_tag "application"
   body.site
     = render partial: 'layouts/header'
-    main.site-content.mt-5
+    main.site-content
       = yield
     = render partial: 'layouts/footer'
