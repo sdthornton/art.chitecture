@@ -1,9 +1,10 @@
 header.site-header.py-4.container-fluid
   = link_to root_path, class: "text-dark" do
-    h3.float-left.site-logo
-      span.d-block.mb-0 Jerome DeMarco
-      span.text-primary art.
-      span chitecture
+    h1.float-left.site-logo style="line-height: 2rem;"
+      span.d-block.mb-0. Jerome DeMarco
+      span.h4
+        span.text-primary art.
+        span chitecture
   nav.site-nav.float-right
     a#main_menu_toggle.float-right.text-dark.site-nav__toggle href=""
       span.align-middle Menu
@@ -17,9 +18,7 @@ header.site-header.py-4.container-fluid
       = link_to "Contact", contact_path, class: "site-nav__item"
 header.site-header.site-header--fixed.py-3.container-fluid.d-none.d-md-block
   = link_to root_path, class: "text-dark" do
-    h3.float-left.site-logo.mb-0
-      span.text-primary art.
-      span chitecture
+    h3.float-left.site-logo.mb-0 Jerome DeMarco
   nav.site-nav.site-nav--fixed.float-right
     a.float-right.text-dark.site-nav__toggle href=""
       span.align-middle Menu
