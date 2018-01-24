@@ -34,3 +34,7 @@
     content: none;
   }
 }
+
+@include media-breakpoint-down(md) {
+  .process-item:after { display: none; }
+}

@@ -5,21 +5,29 @@ header.site-header.py-4.container-fluid
       span.text-primary art.
       span chitecture
   nav.site-nav.float-right
-    = link_to "Home", root_path, class: "site-nav__item"
-    = link_to "Projects", projects_path, class: "site-nav__item"
-    = link_to "Process", process_path, class: "site-nav__item"
-    = link_to "Services", services_path, class: "site-nav__item"
-    = link_to "About", about_path, class: "site-nav__item"
-    = link_to "Contact", contact_path, class: "site-nav__item"
-header.site-header.site-header--fixed.py-3.container-fluid
+    a#main_menu_toggle.float-right.text-dark.site-nav__toggle href=""
+      span.align-middle Menu
+      i.ion-navicon-round.site-nav__toggle-icon.align-middle.ml-2 href="#"
+    #main_menu.site-nav-toggleable.float-right
+      = link_to "Home", root_path, class: "site-nav__item"
+      = link_to "Projects", projects_path, class: "site-nav__item"
+      = link_to "Process", process_path, class: "site-nav__item"
+      = link_to "Services", services_path, class: "site-nav__item"
+      = link_to "About", about_path, class: "site-nav__item"
+      = link_to "Contact", contact_path, class: "site-nav__item"
+header.site-header.site-header--fixed.py-3.container-fluid.d-none.d-md-block
   = link_to root_path, class: "text-dark" do
     h3.float-left.site-logo.mb-0
       span.text-primary art.
       span chitecture
   nav.site-nav.site-nav--fixed.float-right
-    = link_to "Home", root_path, class: "site-nav__item"
-    = link_to "Projects", projects_path, class: "site-nav__item"
-    = link_to "Process", process_path, class: "site-nav__item"
-    = link_to "Services", services_path, class: "site-nav__item"
-    = link_to "About", about_path, class: "site-nav__item"
-    = link_to "Contact", contact_path, class: "site-nav__item"
+    a.float-right.text-dark.site-nav__toggle href=""
+      span.align-middle Menu
+      i.ion-navicon-round.site-nav__toggle-icon.align-middle.ml-2 href="#"
+    .site-nav-toggleable.float-right
+      = link_to "Home", root_path, class: "site-nav__item"
+      = link_to "Projects", projects_path, class: "site-nav__item"
+      = link_to "Process", process_path, class: "site-nav__item"
+      = link_to "Services", services_path, class: "site-nav__item"
+      = link_to "About", about_path, class: "site-nav__item"
+      = link_to "Contact", contact_path, class: "site-nav__item"

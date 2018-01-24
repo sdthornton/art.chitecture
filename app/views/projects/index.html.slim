@@ -1,7 +1,7 @@
 section
   .container.my-5.pb-5
     .row
-      .col-lg-6.offset-1
+      .col-xl-6.col-lg-7.offset-lg-1
         h1.font-weight-bold.display-3 Dream homes come true.
     .row
       .col-lg-6.mx-auto
@@ -9,7 +9,7 @@ section
           h2.form-heading.h3.mt-4.text-center Selected projects
           hr.accent-line.my-4
     .row.mt-5.mb-5.pb-5
-      .col-7.mx-auto
+      .col-lg-7.col-md-10.mx-auto
         = link_to contemporary_project_path do
           .smooth-img-wrap style="padding-bottom: 66.6666%;"
             .smooth-img-placeholder data-img-load=(asset_path('contemporary-space.jpg'))
@@ -17,7 +17,7 @@ section
             .project-info
               h3 Contemporary Panoramic
     .row.mb-5.pb-5
-      .col-7.ml-auto
+      .col-lg-7.col-md-10.ml-auto
         = link_to french_country_project_path do
           .smooth-img-wrap style="padding-bottom: 66.6666%;"
             .smooth-img-placeholder data-img-load=(asset_path('mediterranean-exterior.jpg'))
@@ -25,7 +25,7 @@ section
             .project-info
               h3 French Country
     .row.mb-5.pb-5
-      .col-7
+      .col-lg-7.col-md-10
         = link_to modern_mediterranean_project_path do
           .smooth-img-wrap style="padding-bottom: 66.6666%;"
             .smooth-img-placeholder data-img-load=(asset_path('sprawling.jpg'))
@@ -33,7 +33,7 @@ section
             .project-info
               h3 Modern Mediterranean
     .row.mb-5
-      .col-7.ml-auto
+      .col-lg-7.col-md-10.ml-auto
         = link_to nw_traditional_project_path do
           .smooth-img-wrap style="padding-bottom: 66.6666%;"
             .smooth-img-placeholder data-img-load=(asset_path('transitional-spaces.jpg'))
