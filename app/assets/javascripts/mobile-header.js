@@ -3,10 +3,6 @@
     var mainMenu = document.querySelector('#main_menu');
     var toggleMainMenu = document.querySelector('#main_menu_toggle');
 
-    mainMenu.addEventListener('click', function (e) {
-      e.stopPropagation();
-    }, false);
-
     toggleMainMenu.addEventListener('click', function (e) {
       e.preventDefault();
       e.stopPropagation();

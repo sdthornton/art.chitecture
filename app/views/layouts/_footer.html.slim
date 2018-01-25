@@ -1,20 +1,25 @@
 footer.site-footer.py-5.bg-dark
   .container.py-5
     .row
-      .col-md-3.col-4.mb-5
-        a.d-block href="https://www.houzz.com/pro/jdemarcodesigns/jerome-demarco-artchitecture" target="_blank"
-          = image_tag "houzz-recommended.jpg", width: "96", class: "basic-shadow"
-        a.d-block href="https://www.houzz.com/pro/jdemarcodesigns/jerome-demarco-artchitecture" target="_blank"
-          = image_tag "houzz-influencer.jpg", width: "96", class: "basic-shadow mt-3"
-      .col-md-2.col-4
+      .col-lg-4.col-xl-3.mb-5
+        .clearfix.mx-auto
+          a.d-inline-block href="https://www.houzz.com/pro/jdemarcodesigns/jerome-demarco-artchitecture" target="_blank"
+            = image_tag "houzz-recommended.jpg", width: "96", class: "basic-shadow mr-3 mb-3"
+          a.d-inline-block href="https://www.houzz.com/pro/jdemarcodesigns/jerome-demarco-artchitecture" target="_blank"
+            = image_tag "houzz-influencer.jpg", width: "96", class: "basic-shadow mr-3 mb-3"
+          a.d-inline-block href="https://www.houzz.com/pro/jdemarcodesigns/jerome-demarco-artchitecture" target="_blank"
+            = image_tag "houzz-design.jpg", width: "96", class: "basic-shadow mr-3 mb-3"
+          a.d-inline-block href="https://www.houzz.com/pro/jdemarcodesigns/jerome-demarco-artchitecture" target="_blank"
+            = image_tag "houzz-service.jpg", width: "96", class: "basic-shadow mb-3"
+      .col-lg-2.col-md-3.col-6.col-xl-2.offset-xl-1.mt-4.mt-lg-0.text-center
         = link_to "Home", root_path, class: "text-white d-block"
         = link_to "Projects", projects_path, class: "text-white mt-2 d-block"
         = link_to "Process", process_path, class: "text-white mt-2 d-block"
-      .col-md-2.col-4
-        = link_to "Services", services_path, class: "text-white mt-2 d-block"
+      .col-lg-2.col-md-3.col-6.col-xl-2.mt-4.mt-lg-0.text-center
+        = link_to "Services", services_path, class: "text-white d-block"
         = link_to "About", about_path, class: "text-white mt-2 d-block"
         = link_to "Contact", contact_path, class: "text-white mt-2 d-block"
-      .col-md-5.text-right
+      .col-lg-4.col-md-6.text-right.mt-5.mt-md-4.mt-lg-0.py-5.py-md-0
         = link_to root_path, class: "text-white d-block mb-5"
           h3
             span.text-primary art.
