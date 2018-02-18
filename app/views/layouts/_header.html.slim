@@ -51,7 +51,6 @@ javascript:
   var dropdowns = document.querySelectorAll('.dropdown-link');
   dropdowns.forEach(function (dropdown) {
     dropdown.addEventListener('click', function (e) {
-      e.preventDefault();
       dropdown.classList.toggle('dropdown-link--open');
     }, false);
   });
