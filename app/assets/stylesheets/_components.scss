@@ -13,3 +13,61 @@
   height: 3px;
   max-width: 96px;
 }
+
+.dropdown-link {
+  cursor: pointer;
+  position: relative;
+
+  .ion-android-arrow-dropup {
+    display: none;
+  }
+}
+
+.dropdown-link--open {
+  .ion-android-arrow-dropup {
+    display: inline;
+  }
+
+  .ion-android-arrow-dropdown {
+    display: none;
+  }
+
+  .dropdown-menu {
+    display: block;
+  }
+}
+
+.dropdown-menu {
+  border: 0;
+  box-shadow: $wide-shadow;
+  transform: translateY(8px);
+}
+
+.dropdown-item {
+  color: $gray-700;
+  font-weight: 500;
+}
+
+@include media-breakpoint-down(sm) {
+  .dropdown-link {
+    > i {
+      display: none;
+    }
+
+    .dropdown-menu {
+      background-color: transparent;
+      box-shadow: none;
+      display: block;
+      float: none;
+      margin-top: 0.5rem;
+      position: relative;
+      padding: 0;
+      transform: none;
+    }
+
+    .dropdown-item {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+  }
+}
