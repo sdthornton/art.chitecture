@@ -10,27 +10,32 @@ function projectSlideshow() {
     var projectContents = [];
     var infoTexts = [featuredContent.innerHTML];
     var hrefs = [featuredProject.querySelector('.project-info').href];
-    var imageSrcs = [featuredImage.style.backgroundImage.replace(/url\(.(.*).\)/gi, "$1")];
+    var normalSrcs = [featuredImage.dataset.nonfeaturedImg];
+    var featuredSrcs = [featuredImage.style.backgroundImage.replace(/url\(.(.*).\)/gi, "$1")];
     for (var i = 0, len = 3; i < len; i++) {
       projectImages.push(projects[i].querySelector('.smooth-img'));
-      imageSrcs.push(projectImages[i].src);
+      normalSrcs.push(projectImages[i].src);
+      featuredSrcs.push(projectImages[i].dataset.featuredImg);
       projectContents.push(projects[i].querySelector('.project-info__content'));
       infoTexts.push(projectContents[i].innerHTML);
       hrefs.push(projects[i].href);
     }
 
     if (direction === 'prev') {
-      featuredImage.style.backgroundImage = 'url("' + imageSrcs[3] + '")';
+      featuredImage.style.backgroundImage = 'url("' + featuredSrcs[3] + '")';
+      featuredImage.dataset.nonfeaturedImg = normalSrcs[3]
       featuredContent.innerHTML = infoTexts[3];
       featuredLink.href = hrefs[3];
 
       for (var i = 0, l = 3; i < l; i++) {
-        projectImages[i].src = imageSrcs[i];
+        projectImages[i].src = normalSrcs[i];
+        projectImages[i].dataset.featuredImg = featuredSrcs[i];
         projectContents[i].innerHTML = infoTexts[i];
         projects[i].href = hrefs[i];
       }
     } else {
-      featuredImage.style.backgroundImage = 'url("' + imageSrcs[1] + '")';
+      featuredImage.style.backgroundImage = 'url("' + featuredSrcs[1] + '")';
+      featuredImage.dataset.nonfeaturedImg = normalSrcs[1];
       featuredContent.innerHTML = infoTexts[1];
       featuredLink.href = hrefs[1];
 
@@ -38,7 +43,8 @@ function projectSlideshow() {
         var next = i + 2;
         if (next > l) { next = 0 }
 
-        projectImages[i].src = imageSrcs[next];
+        projectImages[i].src = normalSrcs[next];
+        projectImages[i].dataset.featuredImg = featuredSrcs[next];
         projectContents[i].innerHTML = infoTexts[next];
         projects[i].href = hrefs[next];
       }

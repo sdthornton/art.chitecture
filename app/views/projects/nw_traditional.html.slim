@@ -11,15 +11,25 @@ section
     .row
       .col-12
         = image_tag "transitional-spaces.jpg", width: "100%"
+    .my-5.text-center
+      .mb-4
+        = image_tag "traditional-2.jpg", class: 'align-bottom mr-4', srcset: "#{asset_path('traditional-2@2x.jpg')} 2x"
+        = image_tag "traditional-3.jpg", class: 'align-bottom', srcset: "#{asset_path('traditional-3@2x.jpg')} 2x"
+      .mb-4
+        = image_tag "traditional-4.jpg", class: 'align-middle mr-4', srcset: "#{asset_path('traditional-4@2x.jpg')} 2x"
+        = image_tag "traditional-5.jpg", class: 'align-middle', srcset: "#{asset_path('traditional-5@2x.jpg')} 2x"
+      .mb-4
+        = image_tag "traditional-6.jpg", class: 'align-top mr-4', srcset: "#{asset_path('traditional-6@2x.jpg')} 2x"
+        = image_tag "traditional-7.jpg", class: 'align-top', srcset: "#{asset_path('traditional-7@2x.jpg')} 2x"
     .row.mt-5
-      .col-md-5.offset-md-6.text-right.mt-5.mb-4
+      .col-md-5.offset-md-1.text-left.mt-5.mb-4
         h3 Local materials&mdash;from oversized timbers to natural mossy stone&mdash;helped craft this fabulous transitional home.
     .row
-      .col-xl-7.col-lg-9.offset-lg-1
+      .col-xl-7.col-lg-9.mx-auto
         p.h5.readable-line-height.font-weight-normal.my-5 Our primary inspiration for this fabulous transition NW gold course home was the snow capped mountains, tall pine trees and big blue sky. The entire design was focused on the views from every room, the use of local wood products, natural mossy stone, oversized timbers and arched doors and windows.
         p.h5.readable-line-height.font-weight-normal.my-5 The interior continues with the use of natural timber beams, a massive stone fireplace with a seven-foot mantel, and dashes of arches throughout the home. Other features are cherry and stone floors, handmade knotty alder cabinets, doors and trim, and a modern open floor plan.
     .mt-5.clearfix
-      a.mt-5.ml-auto.p-4.bg-light.h5.float-right href="#{contemporary_project_path}"
+      a.mt-5.ml-auto.p-4.bg-secondary.text-white.h5.float-right href="#{contemporary_project_path}"
         | Next project: Contemporary Panoramic
         i.ion-chevron-right.ml-5
 

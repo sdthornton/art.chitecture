@@ -1,5 +1,5 @@
 doctype html
-html
+html lang="en"
   head
     meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
     meta http-equiv="x-ua-compatible" content="ie=edge"
@@ -7,11 +7,23 @@ html
     title art.chitecture
     link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet"
     = stylesheet_link_tag "application"
-    = javascript_include_tag "application"
-    script src='https://www.google.com/recaptcha/api.js'
-    script src="https://cdn.emailjs.com/dist/email.min.js"
+    = javascript_include_tag "application", async: true
+    script src='https://www.google.com/recaptcha/api.js' defer="" async=""
+    script src="https://cdn.emailjs.com/dist/email.min.js" defer="" async=""
+
   body.site
     = render partial: 'layouts/header'
     main.site-content
       = yield
     = render partial: 'layouts/footer'
+
+  javascript:
+    function runScripts() {
+      if (window.isJsReady) {
+        #{yield :js}
+      } else {
+        requestAnimationFrame(runScripts);
+      }
+    }
+
+    requestAnimationFrame(runScripts);

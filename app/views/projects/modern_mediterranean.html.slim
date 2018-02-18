@@ -11,16 +11,25 @@ section
     .row
       .col-12
         = image_tag "sprawling.jpg", width: "100%"
+    .my-5.text-center
+      .mb-4
+        = image_tag "mediterranean-2.jpg", class: 'align-bottom mr-4', srcset: "#{asset_path('mediterranean-2@2x.jpg')} 2x"
+        = image_tag "mediterranean-3.jpg", class: 'align-bottom', srcset: "#{asset_path('mediterranean-3@2x.jpg')} 2x"
+      .mb-4
+        = image_tag "mediterranean-4.jpg", class: 'align-middle mr-4', srcset: "#{asset_path('mediterranean-4@2x.jpg')} 2x"
+        = image_tag "mediterranean-5.jpg", class: 'align-middle', srcset: "#{asset_path('mediterranean-5@2x.jpg')} 2x"
+      .mb-4
+        = image_tag "mediterranean-7.jpg", class: 'align-top', srcset: "#{asset_path('mediterranean-7@2x.jpg')} 2x"
     .row.mt-5
-      .col-md-5.offset-md-6.text-right.mt-5.mb-4
+      .col-md-5.offset-md-1.text-left.mt-5.mb-4
         h3 Northwest views meet mediterranean insirpation to create this beautiful and peaceful estate.
     .row
-      .col-xl-7.col-lg-9.offset-lg-1
+      .col-xl-7.col-lg-9.mx-auto
         p.h5.readable-line-height.font-weight-normal.my-5 Our clients were moving from Arizona and wanted an all stucco gray exterior on their new 20,000-square-foot home on 28 acres located near Bend, Oregon. They also wanted a design that would fit this Northwest mountain view property and have a stunningly beautiful exterior upon completion.
         p.h5.readable-line-height.font-weight-normal.my-5 Our design was a creative solution that addressed all their desires and resulted in the fabulous NW estate home of their dreams. The addition of color, wood, stone, lighting, landscaping and water transformed their initial ideas into the perfect and appropriate design for all their wants and needs.
         p.h5.readable-line-height.font-weight-normal.my-5 We were able to produce a beautiful home that amazed our clients and has had them smiling ever since.
     .mt-5.clearfix
-      a.mt-5.ml-auto.p-4.bg-light.h5.float-right href="#{nw_traditional_project_path}"
+      a.mt-5.ml-auto.p-4.bg-secondary.text-white.h5.float-right href="#{nw_traditional_project_path}"
         | Next project: Northwest Traditional
         i.ion-chevron-right.ml-5
 

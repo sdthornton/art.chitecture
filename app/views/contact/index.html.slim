@@ -40,7 +40,15 @@ section
 
 javascript:
   (function () {
-    emailjs.init("user_yNApgpUHN9XXaOA2ZbvcP");
+    var waitForEmailJS = function () {
+      if (window.emailjs) {
+        emailjs.init("user_yNApgpUHN9XXaOA2ZbvcP");
+      } else {
+        requestAnimationFrame(waitForEmailJS);
+      }
+    };
+
+    requestAnimationFrame(waitForEmailJS);
 
     var form = document.querySelector('#contact_form');
     var submitButton = form.querySelector('button');
@@ -68,7 +76,7 @@ javascript:
           successAlert.classList.remove('d-none');
           formHeading.scrollIntoView();
         }, function (error) {
-          console.log(error);
+          console.error(error);
           submitButton.innerHTML = "Send your message<i class='ion-paper-airplane ml-2'></i>";
           submitButton.disabled = false;
           grecaptcha.reset();

@@ -2,26 +2,26 @@ section.py-xl-5.py-3.mt-4.position-relative
   .container
     .row
       .col-xl-5.col-lg-6.ml-auto
-        h1.display-3.font-weight-bold.mb-5.home-title
+        h1.display-3.font-weight-bold.mb-5
           | We design spaces you call <span class="home-home">home</span>.
-        p.mb-0.home-prop.text-right.w-75.ml-auto.font-weight-semibold We have one simple goal, to give you a home where family and friends gather, connect, and enjoy one-another.
+        p.mb-2.home-prop.font-weight-semibold We have one simple goal, to give you a home where family and friends gather, connect, and enjoy one another.
         .clearfix.mt-4
           = link_to contact_path, class: 'btn btn-primary btn-lg basic-shadow float-left font-weight-semibold btn-spacer' do
             | Work with us
             i.ion-ios-home.ml-2
-          a.houzz-link.float-right.mt-md-2.mt-4 href="https://www.houzz.com/pro/jdemarcodesigns/jerome-demarco-artchitecture" target="_blank"
-            = image_tag "featured-on-houzz.jpg", class: "houzz-link-img", height: 33, width: 224, alt: "Featured on Houzz logo", title: "Featured on Houzz"
-  .col-xl-7.col-lg-6.touch-left-img.home-project--featured
+          a.houzz-link.float-right.mt-md-2.mt-4 href="https://www.houzz.com/pro/jdemarcodesigns/jerome-demarco-artchitecture" rel="noopener" target="_blank"
+            = image_tag "featured-on-houzz.jpg", srcset: "#{asset_path('featured-on-houzz@2x.jpg')} 2x", class: "houzz-link-img", height: 33, width: 224, alt: "Featured on Houzz logo", title: "Featured on Houzz"
+  .touch-left-img.home-project--featured
     .touch-left-img__bg.smooth-img-wrap
       .smooth-img-placeholder.bg-contemporary data-img-load=(asset_path('contemporary-space.jpg'))
-      .smooth-img
-        = link_to contemporary_project_path, class: "project-info" do
-          .row
-            .col-8.project-info__content
-              h4.project-info__title Contemporary Panoramic
-              p.project-info__text A mid-century design and clean landscaping works to accent stunning views in this timeless home.
-            .col-4.text-right
-              i.ion-forward.mr-3.h2.mt-md-5.mt-4.d-block
+      .smooth-img data-nonfeatured-img=(asset_path('contemporary-space-small.jpg'))
+      = link_to contemporary_project_path, class: "project-info" do
+        .row
+          .col-9.project-info__content
+            h4.project-info__title Contemporary Panoramic
+            p.project-info__text A mid-century design and clean landscaping works to accent stunning views in this timeless home.
+          .col-3.text-right
+            i.ion-forward.mr-3.h2.mt-md-5.mt-4.d-block
       .home-project-buttons
         a.home-project-button.home-project-prev href="#"
           i.ion-arrow-left-c
@@ -34,24 +34,24 @@ section.pt-5
       .row
         = link_to french_country_project_path, class: "home-project col-md-4 col-sm-6 mt-4 mt-sm-0 mx-auto" do
           .smooth-img-wrap style="padding-bottom: 66.6666%;"
-            .smooth-img-placeholder.bg-mediterranean data-img-load=(asset_path('mediterranean-exterior.jpg'))
-            img.smooth-img width="100%"
+            .smooth-img-placeholder.bg-mediterranean data-img-load=(asset_path('mediterranean-exterior-small.jpg'))
+            .smooth-img width="100%" data-featured-img=(asset_path('mediterranean-exterior.jpg')) alt=""
             .project-info
               .project-info__content
                 h4.project-info__title French Country
                 p.project-info__text An open and collaborative design process helped produce this classic home in Northern California.
         = link_to modern_mediterranean_project_path, class: "home-project col-md-4 col-sm-6 mt-4 mt-sm-0 mx-auto" do
           .smooth-img-wrap style="padding-bottom: 66.6666%;"
-            .smooth-img-placeholder.bg-sprawling data-img-load=(asset_path('sprawling.jpg'))
-            img.smooth-img width="100%"
+            .smooth-img-placeholder.bg-sprawling data-img-load=(asset_path('sprawling-small.jpg'))
+            .smooth-img width="100%" data-featured-img=(asset_path('sprawling.jpg')) alt=""
             .project-info
               .project-info__content
                 h4.project-info__title Modern Mediterranean
                 p.project-info__text Northwest views meet mediterranean inspiration to create this beautiful and peaceful estate.
         = link_to nw_traditional_project_path, class: "home-project col-md-4 col-sm-6 mt-4 mt-md-0 mx-auto" do
           .smooth-img-wrap style="padding-bottom: 66.6666%;"
-            .smooth-img-placeholder.bg-traditional data-img-load=(asset_path('transitional-spaces.jpg'))
-            img.smooth-img width="100%"
+            .smooth-img-placeholder.bg-traditional data-img-load=(asset_path('transitional-spaces-small.jpg'))
+            .smooth-img width="100%" data-featured-img=(asset_path('transitional-spaces.jpg')) alt=""
             .project-info
               .project-info__content
                 h4.project-info__title NW Traditional
@@ -66,7 +66,7 @@ section.py-5.position-relative
   .container
     .row
       .col-xl-7.col-lg-6
-        h1.display-4 Custom Home Design &amp; Home Redesign
+        h1.display-4.font-weight-semibold Custom Home Design &amp; Home Redesign
     .row
       .col-xl-6.col-lg-5.offset-2
         h3.readable-line-height.text-right.mt-5 From concept to construction, we're here to turn your dream home into a reality.
@@ -77,7 +77,7 @@ section.py-5.position-relative
         h4.mt-5.mb-0.readable-line-height In the end, your home, like your family, is like no other.
   .col-xl-4.col-lg-5.touch-right-img.home-project--featured.d-none.d-lg-block
     .touch-right-img__bg.smooth-img-wrap
-      .smooth-img-placeholder data-img-load=(asset_path "rustic-exterior.jpg")
+      .smooth-img-placeholder data-img-load=(asset_path "rear-exterior.jpg")
       .smooth-img
 
 hr.accent-line.my-5
@@ -85,8 +85,8 @@ hr.accent-line.my-5
 = render partial: "collage"
 = render partial: "reviews"
 
-javascript:
-  lazyLoadImages();
-  homeAnimation();
-  projectSlideshow();
-  reviews();
+- content_for :js do
+  | lazyLoadImages();
+    homeAnimation();
+    projectSlideshow();
+    reviews();

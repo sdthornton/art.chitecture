@@ -10,9 +10,9 @@ section
           hr.accent-line.my-4
     .row.mt-5
       .col-lg-3.offset-lg-1.d-none.d-lg-block
-        = image_tag "jerry.jpg", width: 200, class: "rounded"
+        = image_tag "jerry.jpg", srcset: "#{asset_path('jerry@2x.jpg')} 2x", width: 200, class: "rounded"
       .col-lg-3.d-block.d-lg-none.mb-5.text-center
-        = image_tag "jerry.jpg", width: 200, class: "rounded mx-auto"
+        = image_tag "jerry.jpg", srcset: "#{asset_path('jerry@2x.jpg')} 2x", width: 200, class: "rounded mx-auto"
       .col-lg-7.col-xl-6
         p.h5.font-weight-normal.readable-line-height I have loved drawing and designing since I was six years old and first able to draw lines with my trusty pencil and ruler. I drew my first floor plan in elementary school, finished construction drawings in high school, and spent four years at the University of Oregon studying Architecture & Interior Architecture.
         p.h5.font-weight-normal.readable-line-height.my-5 Major influences on my design style have been drawn from several notable architects, but most particularly Robert Stern, Frank Gehry, Michael Graves, Antonio Gaudi, Green & Green, I.M. Pei, Richard Meier, and Frank Lloyd Wright.

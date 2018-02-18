@@ -1,0 +1,15 @@
+.btn-houzz {
+  background-color: $houzz;
+  color: white;
+
+  &:hover {
+    background-color: darken($houzz, 10%);
+    color: white;
+  }
+}
+
+.accent-line {
+  background-color: $primary;
+  height: 3px;
+  max-width: 96px;
+}

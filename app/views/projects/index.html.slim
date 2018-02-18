@@ -43,5 +43,5 @@ section
 
 = render partial: "projects-footer"
 
-javascript:
-  lazyLoadImages();
+- content_for :js do
+  | lazyLoadImages();
