@@ -17,13 +17,13 @@ html lang="en"
       = yield
     = render partial: 'layouts/footer'
 
-  javascript:
-    function runScripts() {
-      if (window.isJsReady) {
-        #{yield :js}
-      } else {
-        requestAnimationFrame(runScripts);
+    javascript:
+      function runScripts() {
+        if (window.isJsReady) {
+          #{yield :js}
+        } else {
+          requestAnimationFrame(runScripts);
+        }
       }
-    }
 
-    requestAnimationFrame(runScripts);
+      requestAnimationFrame(runScripts);
