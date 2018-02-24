@@ -15,4 +15,7 @@ class ProjectsController < ApplicationController
   def nw_traditional
   end
 
+  def flat_to_fab
+  end
+
 end

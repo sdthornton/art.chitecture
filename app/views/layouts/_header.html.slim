@@ -1,8 +1,8 @@
 header.site-header.py-4.container-fluid
   = link_to root_path, class: "text-dark" do
-    h1.float-left.site-logo style="line-height: 2rem;"
-      span.d-block.mb-0. Jerome DeMarco
-      span.h4
+    h1.float-left.site-logo style="line-height: 3rem;"
+      span.d-block.mb-0.site-logo__name Jerome DeMarco
+      span.h2
         span.text-primary art.
         span chitecture
   nav.site-nav.float-right
@@ -20,6 +20,7 @@ header.site-header.py-4.container-fluid
           = link_to "French Country", french_country_project_path, class: "dropdown-item"
           = link_to "Modern Mediterranean", modern_mediterranean_project_path, class: "dropdown-item"
           = link_to "Northwest Traditional", nw_traditional_project_path, class: "dropdown-item"
+          = link_to "From Flat to Fab", flat_to_fab_project_path, class: "dropdown-item"
       = link_to "Process", process_path, class: "site-nav__item"
       = link_to "Services", services_path, class: "site-nav__item"
       = link_to "About", about_path, class: "site-nav__item"
@@ -42,6 +43,7 @@ header.site-header.site-header--fixed.py-3.container-fluid.d-none.d-md-block
           = link_to "French Country", french_country_project_path, class: "dropdown-item"
           = link_to "Modern Mediterranean", modern_mediterranean_project_path, class: "dropdown-item"
           = link_to "Northwest Traditional", nw_traditional_project_path, class: "dropdown-item"
+          = link_to "From Flat to Fab", flat_to_fab_project_path, class: "dropdown-item"
       = link_to "Process", process_path, class: "site-nav__item"
       = link_to "Services", services_path, class: "site-nav__item"
       = link_to "About", about_path, class: "site-nav__item"

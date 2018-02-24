@@ -102,12 +102,13 @@
 }
 
 .home-project--featured {
-  width: 50vw;
+  width: 52vw;
 }
 
 @include media-breakpoint-down(lg) {
   .home-project--featured {
     padding-right: 45px;
+    width: 50vw;
   }
 }
 
