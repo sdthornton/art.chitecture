@@ -23,6 +23,17 @@
   }
 }
 
+.dropdown-menu {
+  border: 0;
+  box-shadow: $wide-shadow;
+  display: block;
+  left: 3rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: $transition-base;
+  transform: translateY(0.45rem);
+}
+
 .dropdown-link--open {
   .ion-android-arrow-dropup {
     display: inline;
@@ -33,14 +44,9 @@
   }
 
   .dropdown-menu {
-    display: block;
+    opacity: 1;
+    visibility: visible;
   }
-}
-
-.dropdown-menu {
-  border: 0;
-  box-shadow: $wide-shadow;
-  transform: translateY(8px);
 }
 
 .dropdown-item {

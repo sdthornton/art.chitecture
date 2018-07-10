@@ -1,17 +1,27 @@
 doctype html
 html lang="en"
   head
+    title art.chitecture | Pacific Northwest Architecture | Custom Home Design & Redesign
     meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
     meta http-equiv="x-ua-compatible" content="ie=edge"
     meta content="width=device-width, initial-scale=1.0" name="viewport"
-    title art.chitecture | Pacific Northwest Architecture | Custom Home Design & Redesign
+    meta name="description" content="Pacific Northwest Architecture. Custom home design and home redesign with a personal touch."
+
     link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet"
     = stylesheet_link_tag "application"
     = javascript_include_tag "application", async: true
+
+    / - if admin_signed_in?
+    /   = stylesheet_link_tag "admin"
+    /   = javascript_include_tag "admin", defer: true
+
     script src='https://www.google.com/recaptcha/api.js' defer="" async=""
     script src="https://cdn.emailjs.com/dist/email.min.js" defer="" async=""
 
   body.site
+    / - if admin_signed_in?
+    /   = render 'phrasing/initializer'
+
     = render partial: 'layouts/header'
     main.site-content
       = yield

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
+  devise_for :admins, skip: [:registrations]
+
   resources :projects, only: :index
   get 'projects/contemporary' => 'projects#contemporary', as: 'contemporary_project'
   get 'projects/french_country' => 'projects#french_country', as: 'french_country_project'
@@ -13,5 +15,6 @@ Rails.application.routes.draw do
   get '/process' => 'process#index', as: 'process'
   get '/contact' => 'contact#index', as: 'contact'
   get '/about' => 'about#index', as: 'about'
+  resources :reviews, only: :index
 
 end

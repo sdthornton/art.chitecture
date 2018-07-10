@@ -9,12 +9,16 @@ header.site-header.py-4.container-fluid
     a#main_menu_toggle.float-right.text-dark.site-nav__toggle href=""
       span.align-middle Menu
       i.ion-navicon-round.site-nav__toggle-icon.align-middle.ml-2 href="#"
+    .site-nav-toggleable-overlay
     #main_menu.site-nav-toggleable.float-right
+      #close_menu.close-menu.clearfix
+        a.h1.float-right.px-4.font-weight-light href="#" &times;
       = link_to "Home", root_path, class: "site-nav__item"
-      span.site-nav__item.dropdown-link href="#" data-toggle="dropdown" role="button"
-        span.align-middle Projects
-        i.ion-android-arrow-dropdown.align-middle.ml-2
-        i.ion-android-arrow-dropup.align-middle.ml-2
+      span.dropdown-link href="#" data-toggle="dropdown" role="button"
+        span.site-nav__item
+          span.align-middle Projects
+          i.ion-android-arrow-dropdown.align-middle.ml-2
+          i.ion-android-arrow-dropup.align-middle.ml-2
         .dropdown-menu.dropdown-link__menu
           = link_to "Contemporary Panoramic", contemporary_project_path, class: "dropdown-item"
           = link_to "French Country", french_country_project_path, class: "dropdown-item"
@@ -23,8 +27,10 @@ header.site-header.py-4.container-fluid
           = link_to "From Flat to Fab", flat_to_fab_project_path, class: "dropdown-item"
       = link_to "Process", process_path, class: "site-nav__item"
       = link_to "Services", services_path, class: "site-nav__item"
+      = link_to "Reviews", reviews_path, class: "site-nav__item"
       = link_to "About", about_path, class: "site-nav__item"
       = link_to "Contact", contact_path, class: "site-nav__item"
+
 header.site-header.site-header--fixed.py-3.container-fluid.d-none.d-md-block
   = link_to root_path, class: "text-dark" do
     h3.float-left.site-logo.mb-0 Jerome DeMarco
@@ -34,10 +40,11 @@ header.site-header.site-header--fixed.py-3.container-fluid.d-none.d-md-block
       i.ion-navicon-round.site-nav__toggle-icon.align-middle.ml-2 href="#"
     .site-nav-toggleable.float-right
       = link_to "Home", root_path, class: "site-nav__item"
-      span.site-nav__item.dropdown-link href="#" data-toggle="dropdown" role="button"
-        span.align-middle Projects
-        i.ion-android-arrow-dropdown.align-middle.ml-2
-        i.ion-android-arrow-dropup.align-middle.ml-2
+      span.dropdown-link href="#" data-toggle="dropdown" role="button"
+        span.site-nav__item
+          span.align-middle Projects
+          i.ion-android-arrow-dropdown.align-middle.ml-2
+          i.ion-android-arrow-dropup.align-middle.ml-2
         .dropdown-menu.dropdown-link__menu
           = link_to "Contemporary Panoramic", contemporary_project_path, class: "dropdown-item"
           = link_to "French Country", french_country_project_path, class: "dropdown-item"
@@ -46,13 +53,62 @@ header.site-header.site-header--fixed.py-3.container-fluid.d-none.d-md-block
           = link_to "From Flat to Fab", flat_to_fab_project_path, class: "dropdown-item"
       = link_to "Process", process_path, class: "site-nav__item"
       = link_to "Services", services_path, class: "site-nav__item"
+      = link_to "Reviews", reviews_path, class: "site-nav__item"
       = link_to "About", about_path, class: "site-nav__item"
       = link_to "Contact", contact_path, class: "site-nav__item"
 
 javascript:
-  var dropdowns = document.querySelectorAll('.dropdown-link');
-  dropdowns.forEach(function (dropdown) {
-    dropdown.addEventListener('click', function (e) {
-      dropdown.classList.toggle('dropdown-link--open');
+  (function () {
+    // Platform dropdown
+    var dropdowns = document.querySelectorAll('.dropdown-link');
+
+    function showDropdown() {
+      this.dropdown.classList.add('dropdown-link--open');
+    }
+
+    function hideDropdown() {
+      this.dropdown.classList.remove('dropdown-link--open');
+    }
+
+    function toggleDropdown(e) {
+      e.stopPropagation();
+      this.dropdown.classList.toggle('dropdown-link--open');
+    }
+
+    function bindProjectDropdown(dropdown) {
+      var that = { dropdown: dropdown };
+      dropdown.addEventListener('mouseover', showDropdown.bind(that), false);
+      dropdown.addEventListener('mouseout', hideDropdown.bind(that), false);
+    }
+
+    function bindProjectsDropdown() {
+      for (var i = 0, len = dropdowns.length; i < len; i++) {
+        bindProjectDropdown(dropdowns[i]);
+      }
+    }
+
+    bindProjectsDropdown();
+
+
+    // Mobile toggle
+    var mainMenu = document.querySelector('#main_menu');
+    var toggleMainMenu = document.querySelector('#main_menu_toggle');
+    var closeMenu = document.querySelector('#close_menu');
+
+    toggleMainMenu.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      document.body.classList.toggle('js-main-menu-open');
     }, false);
-  });
+
+    closeMenu.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.body.classList.remove('js-main-menu-open');
+    }, false);
+
+    document.addEventListener('click', function () {
+      if (document.body.classList.contains('js-main-menu-open')) {
+        document.body.classList.remove('js-main-menu-open');
+      }
+    }, false);
+  }());

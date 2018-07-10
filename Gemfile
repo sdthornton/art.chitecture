@@ -18,6 +18,13 @@ gem 'turbolinks', '~> 5'
 gem 'slim-rails'
 gem 'rack-timeout'
 
+gem 'jquery-rails'
+gem 'phrasing'
+gem 'phrasing_plus', git: 'https://github.com/sdthornton/phrasing_plus.git'
+
+gem 'devise'
+gem 'paperclip'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -12,6 +12,12 @@
 //
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
+//= require site-loading
+//= require header-scroll
+//= require lazy-load-images
+//= require project-slideshow
+//= require home-animation
+//= require reviews
+//= require emailer
 
 window.isJsReady = true;
