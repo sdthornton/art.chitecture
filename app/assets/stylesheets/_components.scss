@@ -85,6 +85,18 @@
   column-gap: 1.875rem;
 }
 
+@include media-breakpoint-down(lg) {
+  .image-board {
+    column-count: 3;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .image-board {
+    column-count: 2;
+  }
+}
+
 .image-board-item {
   margin: 0 0 1.875rem;
 }
