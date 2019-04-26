@@ -44,6 +44,7 @@ function imageGallery() {
 
     function closeModal() {
       modal.classList.remove('is-open');
+      modalImage.src = "";
     }
   }
 };
