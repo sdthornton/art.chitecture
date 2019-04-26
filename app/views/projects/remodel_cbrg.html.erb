@@ -1,0 +1,32 @@
+<section>
+  <div class="container my-5 pb-5">
+    <div class="row">
+      <div class="col-xl-6 col-lg-7 offset-lg-1">
+        <h1 class="font-weight-bold display-3">Remodel: Cbrg</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 mx-auto">
+        <p class="mt-4 text-center">
+          Whole house, floor to ceiling remodel from a simple 80's ranch style to a Contemporary NW Lodge style. The footprint of the home remained the same except a 5'x10' foyer was added to the square footage and a front porch. Every wall on the interior, except one, was redesigned and relocated and every finish inside and out was upgraded and replaced. The kitchen stayed in the same original location. The master Bath and Guest Bath were relocated and expanded. The ceiling changed from flat to vaulted with a main ridge beam that was posted down to new footings under the floor. (This was the only Engineering required.) All new roof, siding, windows, doors, stone, lighting, landscaping and Patio cover. Also new HVAC, Water Heater, Electrical, plumbing and insulation.
+Design and Planning took 2 months to secure a permit. Construction time was 5 months.
+        </p>
+        <hr class="accent-line my-4">
+      </div>
+    </div>
+
+    <div class="image-board my-5">
+      <% (1..24).each do |index| %>
+        <div class="image-board-item">
+          <%=
+            image_tag "/assets/projects/remodelcbrg/small/remodelcbrg-#{index}.jpg",
+              class: "image-board-img",
+              data: { large_src: asset_path("/assets/projects/remodelcbrg/large/remodelcbrg-#{index}.jpg") }
+          %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<%= render partial: "/shared/image_gallery_footer" %>

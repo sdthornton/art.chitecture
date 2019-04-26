@@ -1,7 +1,7 @@
 header.site-header.py-4.container-fluid
   = link_to root_path, class: "text-dark" do
     h1.float-left.site-logo style="line-height: 3rem;"
-      span.d-block.mb-0.site-logo__name Jerome DeMarco
+      span.d-block.mb-0.site-logo__name.font-weight-bold Jerome DeMarco
       span.h1
         span.text-primary art.
         span chitecture
@@ -25,6 +25,29 @@ header.site-header.py-4.container-fluid
           = link_to "Modern Mediterranean", modern_mediterranean_project_path, class: "dropdown-item"
           = link_to "Northwest Traditional", nw_traditional_project_path, class: "dropdown-item"
           = link_to "From Flat to Fab", flat_to_fab_project_path, class: "dropdown-item"
+          hr/
+          = link_to "Project Exteriors", project_exteriors_path, class: "dropdown-item"
+          = link_to "Project Interiors", project_interiors_path, class: "dropdown-item"
+          = link_to "Remodel: Cbrg", remodel_cbrg_path, class: "dropdown-item"
+          = link_to "Remodel: E-B", remodel_eb_path, class: "dropdown-item"
+          = link_to "Remodel: Tig", remodel_tig_path, class: "dropdown-item"
+          = link_to "Renderings", renderings_path, class: "dropdown-item"
+          = link_to "Details", details_path, class: "dropdown-item"
+      span.dropdown-link href="#" data-toggle="dropdown" role="button"
+        span.site-nav__item
+          span.align-middle Concepts
+          i.ion-android-arrow-dropdown.align-middle.ml-2
+          i.ion-android-arrow-dropup.align-middle.ml-2
+        .dropdown-menu.dropdown-link__menu
+          = link_to "Ultra Master Bath", ultra_master_bath_path, class: "dropdown-item"
+          = link_to "Ultra Great Room", ultra_great_room_path, class: "dropdown-item"
+          = link_to "Ultra Master Suites", ultra_master_suites_path, class: "dropdown-item"
+          = link_to "Ultra Closest", ultra_closet_path, class: "dropdown-item"
+          = link_to "Ultra Outdoor Living", ultra_outdoor_living_path, class: "dropdown-item"
+          = link_to "Before & After", before_and_after_path, class: "dropdown-item"
+          = link_to "Exterior", concept_exterior_path, class: "dropdown-item"
+          = link_to "Interior", concept_interior_path, class: "dropdown-item"
+          = link_to "Floating Ceiling Panels", floating_ceiling_panels_path, class: "dropdown-item"
       = link_to "Process", process_path, class: "site-nav__item"
       = link_to "Services", services_path, class: "site-nav__item"
       = link_to "Reviews", reviews_path, class: "site-nav__item"
@@ -51,6 +74,28 @@ header.site-header.site-header--fixed.py-3.container-fluid.d-none.d-md-block
           = link_to "Modern Mediterranean", modern_mediterranean_project_path, class: "dropdown-item"
           = link_to "Northwest Traditional", nw_traditional_project_path, class: "dropdown-item"
           = link_to "From Flat to Fab", flat_to_fab_project_path, class: "dropdown-item"
+          = link_to "Project Exteriors", project_exteriors_path, class: "dropdown-item"
+          = link_to "Project Interiors", project_interiors_path, class: "dropdown-item"
+          = link_to "Remodel: Cbrg", remodel_cbrg_path, class: "dropdown-item"
+          = link_to "Remodel: E-B", remodel_eb_path, class: "dropdown-item"
+          = link_to "Remodel: Tig", remodel_tig_path, class: "dropdown-item"
+          = link_to "Renderings", renderings_path, class: "dropdown-item"
+          = link_to "Details", details_path, class: "dropdown-item"
+      span.dropdown-link href="#" data-toggle="dropdown" role="button"
+        span.site-nav__item
+          span.align-middle Concepts
+          i.ion-android-arrow-dropdown.align-middle.ml-2
+          i.ion-android-arrow-dropup.align-middle.ml-2
+        .dropdown-menu.dropdown-link__menu
+          = link_to "Ultra Master Bath", ultra_master_bath_path, class: "dropdown-item"
+          = link_to "Ultra Great Room", ultra_great_room_path, class: "dropdown-item"
+          = link_to "Ultra Master Suites", ultra_master_suites_path, class: "dropdown-item"
+          = link_to "Ultra Closest", ultra_closet_path, class: "dropdown-item"
+          = link_to "Ultra Outdoor Living", ultra_outdoor_living_path, class: "dropdown-item"
+          = link_to "Before & After", before_and_after_path, class: "dropdown-item"
+          = link_to "Exterior", concept_exterior_path, class: "dropdown-item"
+          = link_to "Interior", concept_interior_path, class: "dropdown-item"
+          = link_to "Floating Ceiling Panels", floating_ceiling_panels_path, class: "dropdown-item"
       = link_to "Process", process_path, class: "site-nav__item"
       = link_to "Services", services_path, class: "site-nav__item"
       = link_to "Reviews", reviews_path, class: "site-nav__item"

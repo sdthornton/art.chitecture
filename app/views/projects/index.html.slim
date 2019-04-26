@@ -6,7 +6,7 @@ section
     .row
       .col-lg-6.mx-auto
         .clearfix.pb-4
-          h2.form-heading.h3.mt-4.text-center Selected projects
+          h2.form-heading.h3.mt-4.text-center Featured projects
           hr.accent-line.my-4
     .row.mt-5.mb-5.pb-5
       .col-lg-7.col-md-10.mx-auto
@@ -40,6 +40,14 @@ section
             img.smooth-img width="100%"
             .project-info
               h3 Northwest Traditional
+    .row.mb-5.pb-5
+      .col-lg-7.col-md-10
+        = link_to flat_to_fab_project_path do
+          .smooth-img-wrap style="padding-bottom: 66.6666%;"
+            .smooth-img-placeholder data-img-load=(asset_path('flat-to-fab-2.jpg'))
+            img.smooth-img width="100%"
+            .project-info
+              h3 From Flat to Fab
 
 = render partial: "projects-footer"
 

@@ -18,4 +18,25 @@ class ProjectsController < ApplicationController
   def flat_to_fab
   end
 
+  def project_exteriors
+  end
+
+  def project_interiors
+  end
+
+  def remodel_cbrg
+  end
+
+  def remodel_eb
+  end
+
+  def remodel_tig
+  end
+
+  def renderings
+  end
+
+  def details
+  end
+
 end

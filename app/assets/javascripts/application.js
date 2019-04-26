@@ -19,5 +19,6 @@
 //= require home-animation
 //= require reviews
 //= require emailer
+//= require image-gallery
 
 window.isJsReady = true;

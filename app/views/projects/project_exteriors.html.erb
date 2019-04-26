@@ -1,0 +1,31 @@
+<section>
+  <div class="container my-5 pb-5">
+    <div class="row">
+      <div class="col-xl-6 col-lg-7 offset-lg-1">
+        <h1 class="font-weight-bold display-3">Project Exteriors</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 mx-auto">
+        <p class="mt-4 text-center">
+          Contemporary, North West, Lodge, Porte-cohere, Portico, Garage Doors, Wood, Stone, Veneer, Siding, Cabin, Estates, &amp; Retreat.
+        </p>
+        <hr class="accent-line my-4">
+      </div>
+    </div>
+
+    <div class="image-board my-5">
+      <% (1..61).each do |index| %>
+        <div class="image-board-item">
+          <%=
+            image_tag "/assets/projects/exteriors/small/exteriors-#{index}.jpg",
+              class: "image-board-img",
+              data: { large_src: asset_path("/assets/projects/exteriors/large/exteriors-#{index}.jpg") }
+          %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<%= render partial: "/shared/image_gallery_footer" %>
