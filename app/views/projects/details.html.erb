@@ -18,9 +18,9 @@
       <% (1..51).each do |index| %>
         <div class="image-board-item">
           <%=
-            image_tag "/assets/projects/renderings/small/renderings-#{index}.jpg",
+            image_tag "projects/details/small/details-#{index}.jpg",
               class: "image-board-img",
-              data: { large_src: asset_path("/assets/projects/renderings/large/renderings-#{index}.jpg") }
+              data: { large_src: asset_path("projects/details/large/details-#{index}.jpg") }
           %>
         </div>
       <% end %>

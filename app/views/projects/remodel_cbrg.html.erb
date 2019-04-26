@@ -19,9 +19,9 @@ Design and Planning took 2 months to secure a permit. Construction time was 5 mo
       <% (1..24).each do |index| %>
         <div class="image-board-item">
           <%=
-            image_tag "/assets/projects/remodelcbrg/small/remodelcbrg-#{index}.jpg",
+            image_tag "projects/remodelcbrg/small/remodelcbrg-#{index}.jpg",
               class: "image-board-img",
-              data: { large_src: asset_path("/assets/projects/remodelcbrg/large/remodelcbrg-#{index}.jpg") }
+              data: { large_src: asset_path("projects/remodelcbrg/large/remodelcbrg-#{index}.jpg") }
           %>
         </div>
       <% end %>
