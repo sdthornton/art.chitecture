@@ -1,0 +1,23 @@
+<section>
+  <div class="container my-5 pb-5">
+    <div class="row">
+      <div class="col-xl-6 col-lg-7 offset-lg-1">
+        <h1 class="font-weight-bold display-3">Ultra Kitchen</h1>
+      </div>
+    </div>
+
+    <div class="image-board my-5">
+      <% (1..45).each do |index| %>
+        <div class="image-board-item">
+          <%=
+            image_tag "concepts/ultrakitchen/small/ultrakitchen-#{index}.jpg",
+              class: "image-board-img",
+              data: { large_src: asset_path("concepts/ultrakitchen/large/ultrakitchen-#{index}.jpg") }
+          %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<%= render partial: "/shared/image_gallery_footer" %>

@@ -45,7 +45,7 @@
   color: $gray-700;
   font-size: 1.125rem;
   font-weight: 500;
-  margin-left: 3rem;
+  margin-left: 2.25rem;
   padding: 0.5rem 0;
   position: relative;
   transition: all 0.2s ease-in-out;
@@ -110,7 +110,7 @@
   display: none;
 }
 
-@media only screen and (max-width: 1296px) {
+@media only screen and (max-width: 1200px) {
   .close-menu {
     display: block;
   }
@@ -161,11 +161,18 @@
     &:after {
       content: none;
     }
+
+    .ion-android-arrow-dropdown {
+      display: inline-block !important;
+    }
+
+    .ion-android-arrow-dropup {
+      display: none !important;
+    }
   }
 
   .dropdown-menu {
     box-shadow: none;
-    display: none;
     left: inherit;
     margin: 0;
     opacity: 1;
@@ -175,8 +182,8 @@
     visibility: visible;
     width: 100%;
 
-    .dropdown-link--open & {
-      display: block;
+    hr {
+      display: none;
     }
   }
 
@@ -187,6 +194,6 @@
   }
 
   .dropdown-item {
-    padding: 0.5rem 4.5rem;
+    padding: 0.5rem 4.5rem !important;
   }
 }

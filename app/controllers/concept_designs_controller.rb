@@ -18,6 +18,9 @@ class ConceptDesignsController < ApplicationController
   def ultra_outdoor_living
   end
 
+  def ultra_kitchen
+  end
+
   def before_and_after
   end
 

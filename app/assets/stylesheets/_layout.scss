@@ -1,4 +1,26 @@
+html {
+  font-size: 100%;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+@include media-breakpoint-down(sm) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
 .container-fluid {
   padding-left: 30px;
   padding-right: 30px;
+}
+
+@include media-breakpoint-down(sm) {
+  .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }

@@ -27,7 +27,7 @@
   border: 0;
   box-shadow: $wide-shadow;
   display: block;
-  left: 3rem;
+  left: 2.25rem;
   opacity: 0;
   visibility: hidden;
   transition: $transition-base;
@@ -102,7 +102,13 @@
 }
 
 .image-board-img {
+  cursor: pointer;
+  transition: $transition-base;
   width: 100%;
+
+  &:hover {
+    transform: scale3d(1.05, 1.05, 1);
+  }
 }
 
 .image-gallery-modal {

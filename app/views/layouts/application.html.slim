@@ -10,6 +10,19 @@ html lang="en"
     link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet"
     <link href="https://fonts.googleapis.com/css?family=Calibri:400,700" rel="stylesheet">
     = stylesheet_link_tag "application"
+
+    javascript:
+      Object.defineProperty(window, 'isJsReady', {
+        get: function () {
+          return this._isJsReady;
+        },
+        set: function (isReady) {
+          this._isJsReady = isReady;
+          if (window.runScripts) {
+            requestAnimationFrame(runScripts);
+          }
+        },
+      });
     = javascript_include_tag "application", async: true
 
     / - if admin_signed_in?
@@ -30,11 +43,10 @@ html lang="en"
 
     javascript:
       function runScripts() {
-        if (window.isJsReady) {
-          #{yield :js}
-        } else {
-          requestAnimationFrame(runScripts);
-        }
+        #{yield :js}
       }
 
-      requestAnimationFrame(runScripts);
+      if (window.isJsReady) {
+        requestAnimationFrame(runScripts);
+      }
+

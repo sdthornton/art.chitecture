@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get '/concept_designs/ultra_master_suites' => 'concept_designs#ultra_master_suites', as: 'ultra_master_suites'
   get '/concept_designs/ultra_closet' => 'concept_designs#ultra_closet', as: 'ultra_closet'
   get '/concept_designs/ultra_outdoor_living' => 'concept_designs#ultra_outdoor_living', as: 'ultra_outdoor_living'
+  get '/concept_designs/ultra_kitchen' => 'concept_designs#ultra_kitchen', as: 'ultra_kitchen'
   get '/concept_designs/before_and_after' => 'concept_designs#before_and_after', as: 'before_and_after'
   get '/concept_designs/exterior' => 'concept_designs#exterior', as: 'concept_exterior'
   get '/concept_designs/interior' => 'concept_designs#interior', as: 'concept_interior'
@@ -32,6 +33,7 @@ Rails.application.routes.draw do
   get '/process' => 'process#index', as: 'process'
   get '/contact' => 'contact#index', as: 'contact'
   get '/about' => 'about#index', as: 'about'
+  get '/interior_design' => 'interior_design#index'
   resources :reviews, only: :index
 
 end
