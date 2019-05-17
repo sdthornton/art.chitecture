@@ -1,19 +1,21 @@
-<!--
 <section>
   <div class="container my-5 pb-5">
     <div class="row">
       <div class="col-xl-6 col-lg-7 offset-lg-1">
-        <h1 class="font-weight-bold display-3">Exteriors</h1>
+        <h1 class="font-weight-bold display-3"><%= title %></h1>
       </div>
     </div>
 
     <div class="image-board my-5">
-      <% (1..48).each do |index| %>
+      <% (1..image_count).each do |index| %>
         <div class="image-board-item">
           <%=
-            image_tag "concepts/conceptexterior/small/conceptexterior-#{index}.jpg",
+            image_tag "#{category}/#{path}/small/#{path}-#{index}.jpg",
               class: "image-board-img",
-              data: { large_src: asset_path("concepts/conceptexterior/large/conceptexterior-#{index}.jpg") }
+              data: {
+                large_src: asset_path("#{category}/#{path}/large/#{path}-#{index}.jpg"),
+                index: index
+              }
           %>
         </div>
       <% end %>
@@ -22,4 +24,3 @@
 </section>
 
 <%= render partial: "/shared/image_gallery_footer" %>
--->

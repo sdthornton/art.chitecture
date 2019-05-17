@@ -10,24 +10,7 @@ html lang="en"
     link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet"
     <link href="https://fonts.googleapis.com/css?family=Calibri:400,700" rel="stylesheet">
     = stylesheet_link_tag "application"
-
-    javascript:
-      Object.defineProperty(window, 'isJsReady', {
-        get: function () {
-          return this._isJsReady;
-        },
-        set: function (isReady) {
-          this._isJsReady = isReady;
-          if (window.runScripts) {
-            requestAnimationFrame(runScripts);
-          }
-        },
-      });
-    = javascript_include_tag "application", async: true
-
-    / - if admin_signed_in?
-    /   = stylesheet_link_tag "admin"
-    /   = javascript_include_tag "admin", defer: true
+    = javascript_include_tag "application", defer: true, async: true
 
     script src='https://www.google.com/recaptcha/api.js' defer="" async=""
     script src="https://cdn.emailjs.com/dist/email.min.js" defer="" async=""
@@ -44,9 +27,16 @@ html lang="en"
     javascript:
       function runScripts() {
         #{yield :js}
+      };
+
+      function runJSAfterLoad() {
+        if (window.isJsReady) {
+          requestAnimationFrame(runScripts);
+        } else {
+          setTimeout(runJSAfterLoad, 250);
+        }
       }
 
-      if (window.isJsReady) {
-        requestAnimationFrame(runScripts);
-      }
+      runJSAfterLoad();
+
 
