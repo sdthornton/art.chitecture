@@ -48,8 +48,22 @@ section
             img.smooth-img width="100%"
             .project-info
               h3 From Flat to Fab
+    .row
+      .col-lg-6.mx-auto
+        .clearfix.pb-4
+          h2.form-heading.h3.mt-4.text-center Our Other Work
+          hr.accent-line.my-4
+    .text-center
+      ul.list-unstyled
+        li.h4 = link_to "Project Exteriors", project_exteriors_path
+        li.h4 = link_to "Project Interiors", project_interiors_path
+        li.h4 = link_to "Remodel: Cbrg", remodel_cbrg_path
+        li.h4 = link_to "Remodel: E-B", remodel_eb_path
+        li.h4 = link_to "Remodel: Tig", remodel_tig_path
+        li.h4 = link_to "Renderings", renderings_path
+        li.h4 = link_to "Details", details_path
 
 = render partial: "projects-footer"
 
-- content_for :js do
-  | lazyLoadImages();
+javascript:
+  lazyLoadImages();

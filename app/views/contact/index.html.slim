@@ -38,17 +38,11 @@ section
               i.ion-paper-airplane.mr-2
               | Send your message
 
+script src="https://www.google.com/recaptcha/api.js"
+script src="https://cdn.emailjs.com/dist/email.min.js"
 javascript:
   (function () {
-    var waitForEmailJS = function () {
-      if (window.emailjs) {
-        emailjs.init("user_yNApgpUHN9XXaOA2ZbvcP");
-      } else {
-        requestAnimationFrame(waitForEmailJS);
-      }
-    };
-
-    requestAnimationFrame(waitForEmailJS);
+    emailjs.init("user_yNApgpUHN9XXaOA2ZbvcP");
 
     var form = document.querySelector('#contact_form');
     var submitButton = form.querySelector('button');

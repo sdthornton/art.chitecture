@@ -8,35 +8,12 @@ html lang="en"
     meta name="description" content="Pacific Northwest Architecture. Custom home design and home redesign with a personal touch."
 
     link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet"
-    <link href="https://fonts.googleapis.com/css?family=Calibri:400,700" rel="stylesheet">
+    link href="https://fonts.googleapis.com/css?family=Calibri:400,700" rel="stylesheet"
     = stylesheet_link_tag "application"
-    = javascript_include_tag "application", defer: true, async: true
-
-    script src='https://www.google.com/recaptcha/api.js' defer="" async=""
-    script src="https://cdn.emailjs.com/dist/email.min.js" defer="" async=""
+    = javascript_include_tag "application"
 
   body.site
-    / - if admin_signed_in?
-    /   = render 'phrasing/initializer'
-
     = render partial: 'layouts/header'
     main.site-content
       = yield
     = render partial: 'layouts/footer'
-
-    javascript:
-      function runScripts() {
-        #{yield :js}
-      };
-
-      function runJSAfterLoad() {
-        if (window.isJsReady) {
-          requestAnimationFrame(runScripts);
-        } else {
-          setTimeout(runJSAfterLoad, 250);
-        }
-      }
-
-      runJSAfterLoad();
-
-

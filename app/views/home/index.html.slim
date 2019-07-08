@@ -6,10 +6,10 @@ section.py-xl-5.py-3.mt-4.position-relative
           | We design spaces you call <span class="home-home">home</span>.
         p.mb-2.home-prop.font-weight-semibold We have one simple goal, to give you a home where family and friends gather, connect, and enjoy one another.
         .clearfix.mt-4
-          = link_to contact_path, class: 'btn btn-primary btn-lg basic-shadow float-left font-weight-semibold btn-spacer' do
+          = link_to contact_path, class: 'btn btn-primary btn-lg basic-shadow d-inline-block align-middle mr-4 font-weight-semibold btn-spacer' do
             | Work with us
             i.ion-ios-home.ml-2
-          a.houzz-link.float-right.mt-md-2.mt-4 href="https://www.houzz.com/pro/jdemarcodesigns/jerome-demarco-artchitecture" rel="noopener" target="_blank"
+          a.houzz-link.align-middle.d-inline-block href="https://www.houzz.com/pro/jdemarcodesigns/jerome-demarco-artchitecture" rel="noopener" target="_blank"
             = image_tag "featured-on-houzz.jpg", srcset: "#{asset_path('featured-on-houzz@2x.jpg')} 2x", class: "houzz-link-img", height: 33, width: 224, alt: "Featured on Houzz logo", title: "Featured on Houzz"
   .touch-left-img.home-project--featured
     .touch-left-img__bg.smooth-img-wrap
@@ -86,8 +86,8 @@ hr.accent-line.my-5
 = render partial: "collage"
 = render partial: "reviews"
 
-- content_for :js do
-  | lazyLoadImages();
-    homeAnimation();
-    projectSlideshow();
-    reviews();
+javascript:
+  lazyLoadImages();
+  homeAnimation();
+  projectSlideshow();
+  reviews();

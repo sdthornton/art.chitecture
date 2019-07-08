@@ -151,7 +151,7 @@
     height: auto;
     max-width: 720px;
     margin: 7rem auto 0;
-    padding: 0 15px;
+    padding: 0 30px;
     position: relative;
     width: 100%;
 
@@ -159,6 +159,12 @@
       height: 0;
       padding-bottom: 66.6666%;
     }
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .home-project--featured {
+    padding: 0 8vw;
   }
 }
 

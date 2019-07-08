@@ -12,13 +12,9 @@ function homeAnimation() {
   }
 
   function loopGetHomeWord(stamp) {
-    if (!document.body.classList.contains('js-site-loaded')) {
+    if (stamp >= (300 + lastUpdate)) {
       lastUpdate = stamp;
-    } else {
-      if (stamp >= (300 + lastUpdate)) {
-        lastUpdate = stamp;
-        getHomeWord();
-      }
+      getHomeWord();
     }
     homeWordRaf = requestAnimationFrame(loopGetHomeWord);
   }

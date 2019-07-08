@@ -18,9 +18,10 @@ body {
   padding-right: 30px;
 }
 
-@include media-breakpoint-down(sm) {
+@include media-breakpoint-down(xs) {
+  .container,
   .container-fluid {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 8vw;
+    padding-right: 8vw;
   }
 }

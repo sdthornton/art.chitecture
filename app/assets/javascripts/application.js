@@ -11,8 +11,6 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
-//= require site-loading
 //= require header-scroll
 //= require lazy-load-images
 //= require project-slideshow
