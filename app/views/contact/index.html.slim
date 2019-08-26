@@ -4,79 +4,82 @@ section
       .col-xl-6.col-lg-7.offset-lg-1
         h1.font-weight-bold.display-3 We&rsquo;d love to work with you.
     .row
-      .col-lg-6.mx-auto
-        .clearfix.pb-4
-          h2.form-heading.h3.mt-4.text-center Get in touch with us
-          hr.accent-line.my-4
-        .email-success-alert.alert.alert-success.mb-5.d-none Yay! We've received your message and will get back to you ASAP.
-        .email-error-alert.alert.alert-danger.mb-5.d-none Sorry, we seem to be having some issue. Feel free to <a href onclick="location.reload()">refresh the page</a> and try again. Or, simply email us at <a href="mailto:jerome@jdemarcodesigns.com">jerome@jdemarcodesigns.com</a>.
-        form#contact_form method="post"
-          .form-group
-            label for="from_name" Your name
-            input#from_name.form-control type="text" name="from_name" required=""
-            small.form-text.text-muted It's nice to meet you!
-          .form-group
-            label for="reply_to" Your email
-            input#reply_to.form-control type="email" name="reply_to" required=""
-            small.form-text.text-muted Just so we know how to reach you.
-          .form-group
-            label for="subject" Why are you reaching out to us?
-            select#subject.form-control name="subject" required=""
-              option value=""
-              option value="I have a new residential project." I have a new residential project.
-              option value="I would like to discuss a remodel." I would like to discuss a remodel.
-              option value="I am interested in learning more about your work." I am interested in learning more about your work.
-              option value="Just saying hello (i.e. Other)." Just saying hello (i.e. Other).
-          .form-group
-            label for="message_html" Your message to us
-            textarea#message_html.form-control name="message_html"
-          .form-group.mt-4.clearfix
-            .clearix
-              .g-recaptcha.float-right data-sitekey="6LdlmT8UAAAAANUtRELaG4JY-eGmBL4KRQiLzEiF"
-          .form-group.mt-5.clearfix
-            button.btn.btn-lg.btn-primary.basic-shadow.float-right.font-weight-semibold.btn-spacing type="submit"
-              i.ion-paper-airplane.mr-2
-              | Send your message
+      .col-lg-6.mx-auto.text-center.my-5
+        a.btn.btn-lg.btn-primary.px-5 href="mailto:jerome@jdemarcodesigns.com"
+          i.ion-paper-airplane.mr-3
+          | Send Us a Message
+/         .clearfix.pb-4
+/           h2.form-heading.h3.mt-4.text-center Get in touch with us
+/           hr.accent-line.my-4
+/         .email-success-alert.alert.alert-success.mb-5.d-none Yay! We've received your message and will get back to you ASAP.
+/         .email-error-alert.alert.alert-danger.mb-5.d-none Sorry, we seem to be having some issue. Feel free to <a href onclick="location.reload()">refresh the page</a> and try again. Or, simply email us at <a href="mailto:jerome@jdemarcodesigns.com">jerome@jdemarcodesigns.com</a>.
+/         form#contact_form method="post"
+/           .form-group
+/             label for="from_name" Your name
+/             input#from_name.form-control type="text" name="from_name" required=""
+/             small.form-text.text-muted It's nice to meet you!
+/           .form-group
+/             label for="reply_to" Your email
+/             input#reply_to.form-control type="email" name="reply_to" required=""
+/             small.form-text.text-muted Just so we know how to reach you.
+/           .form-group
+/             label for="subject" Why are you reaching out to us?
+/             select#subject.form-control name="subject" required=""
+/               option value=""
+/               option value="I have a new residential project." I have a new residential project.
+/               option value="I would like to discuss a remodel." I would like to discuss a remodel.
+/               option value="I am interested in learning more about your work." I am interested in learning more about your work.
+/               option value="Just saying hello (i.e. Other)." Just saying hello (i.e. Other).
+/           .form-group
+/             label for="message_html" Your message to us
+/             textarea#message_html.form-control name="message_html"
+/           .form-group.mt-4.clearfix
+/             .clearix
+/               .g-recaptcha.float-right data-sitekey="6LdlmT8UAAAAANUtRELaG4JY-eGmBL4KRQiLzEiF"
+/           .form-group.mt-5.clearfix
+/             button.btn.btn-lg.btn-primary.basic-shadow.float-right.font-weight-semibold.btn-spacing type="submit"
+/               i.ion-paper-airplane.mr-2
+/               | Send your message
 
-script src="https://www.google.com/recaptcha/api.js"
-script src="https://cdn.emailjs.com/dist/email.min.js"
-javascript:
-  (function () {
-    emailjs.init("user_yNApgpUHN9XXaOA2ZbvcP");
+/ script src="https://www.google.com/recaptcha/api.js"
+/ script src="https://cdn.emailjs.com/dist/email.min.js"
+/ javascript:
+/   (function () {
+/     emailjs.init("user_yNApgpUHN9XXaOA2ZbvcP");
 
-    var form = document.querySelector('#contact_form');
-    var submitButton = form.querySelector('button');
-    var serviceId = "default_service";
-    var templateId = "website_contact";
-    var successAlert = document.querySelector('.email-success-alert');
-    var errorAlert = document.querySelector('.email-error-alert');
-    var formHeading = document.querySelector('.form-heading');
+/     var form = document.querySelector('#contact_form');
+/     var submitButton = form.querySelector('button');
+/     var serviceId = "default_service";
+/     var templateId = "website_contact";
+/     var successAlert = document.querySelector('.email-success-alert');
+/     var errorAlert = document.querySelector('.email-error-alert');
+/     var formHeading = document.querySelector('.form-heading');
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
+/     form.addEventListener('submit', function (e) {
+/       e.preventDefault();
 
-      submitButton.innerHTML = 'Sending&hellip;'
-      submitButton.disabled = true;
-      successAlert.classList.add('d-none');
-      errorAlert.classList.add('d-none');
-      emailjs
-        .sendForm(serviceId, templateId, contact_form)
-        .then(function (response) {
-          console.log('SUCCESS', response);
-          submitButton.innerHTML = "Send your message<i class='ion-paper-airplane ml-2'></i>";
-          submitButton.disabled = false;
-          grecaptcha.reset();
-          form.reset();
-          successAlert.classList.remove('d-none');
-          formHeading.scrollIntoView();
-        }, function (error) {
-          console.error(error);
-          submitButton.innerHTML = "Send your message<i class='ion-paper-airplane ml-2'></i>";
-          submitButton.disabled = false;
-          grecaptcha.reset();
-          form.reset();
-          errorAlert.classList.remove('d-none');
-          formHeading.scrollIntoView();
-        });
-    }, true);
-  }());
+/       submitButton.innerHTML = 'Sending&hellip;'
+/       submitButton.disabled = true;
+/       successAlert.classList.add('d-none');
+/       errorAlert.classList.add('d-none');
+/       emailjs
+/         .sendForm(serviceId, templateId, contact_form)
+/         .then(function (response) {
+/           console.log('SUCCESS', response);
+/           submitButton.innerHTML = "Send your message<i class='ion-paper-airplane ml-2'></i>";
+/           submitButton.disabled = false;
+/           grecaptcha.reset();
+/           form.reset();
+/           successAlert.classList.remove('d-none');
+/           formHeading.scrollIntoView();
+/         }, function (error) {
+/           console.error(error);
+/           submitButton.innerHTML = "Send your message<i class='ion-paper-airplane ml-2'></i>";
+/           submitButton.disabled = false;
+/           grecaptcha.reset();
+/           form.reset();
+/           errorAlert.classList.remove('d-none');
+/           formHeading.scrollIntoView();
+/         });
+/     }, true);
+/   }());
